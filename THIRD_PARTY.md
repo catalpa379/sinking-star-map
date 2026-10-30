@@ -10,6 +10,5 @@
 | Node.js | [Node.js 24.22.1](https://nodejs.org/dist/v24.22.1/) | 发行包 `SinkingMap/runtime/LICENSE.txt` 包含 Node.js 及附带组件许可。 |
 | MinGW-w64、GCC 运行库、winpthreads | 构建工具链及运行库 | 发行包 `SinkingMap/licenses/` 包含各组件许可、GPL 和 GCC Runtime Library Exception。 |
 | Windows 组件 | Win32、GDI+、DXGI、.NET Framework / Windows Forms | 使用系统组件。 |
-| 界面星纹 | 根据游戏标题截图使用 ImageGen 制作 | 发行包 `SinkingMap/ui/star-rosette.png`，制作说明见同目录 `ASSET-NOTES.txt`。 |
 
 项目新增代码采用 [MIT 许可](LICENSE)。第三方代码与素材遵循各自的许可和权利归属。
