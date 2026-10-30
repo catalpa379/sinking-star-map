@@ -1,0 +1,120 @@
+{
+  "files": [
+    {
+      "path": "dxgi.dll",
+      "sha256": "3B9963AFE00275B816862BFDF475CA1D706B452AA7FE994637EC63157CD62E49"
+    },
+    {
+      "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+      "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+    },
+    {
+      "path": "SinkingMap/licenses/COPYING.RUNTIME",
+      "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+    },
+    {
+      "path": "SinkingMap/licenses/COPYING3",
+      "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+    },
+    {
+      "path": "SinkingMap/licenses/winpthreads.txt",
+      "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+    },
+    {
+      "path": "SinkingMap/runtime/LICENSE.txt",
+      "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+    },
+    {
+      "path": "SinkingMap/runtime/node.exe",
+      "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+    },
+    {
+      "path": "SinkingMap/terrain/map-0.smt",
+      "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+    },
+    {
+      "path": "SinkingMap/terrain/map-1.smt",
+      "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+    },
+    {
+      "path": "SinkingMap/terrain/map-2.smt",
+      "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+    },
+    {
+      "path": "SinkingMap/terrain/provenance.json",
+      "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+    },
+    {
+      "path": "SinkingMap/ui/ASSET-NOTES.txt",
+      "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+    },
+    {
+      "path": "SinkingMap/ui/star-rosette.png",
+      "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+    },
+    {
+      "path": "SinkingMap/worker/main.mjs",
+      "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+    },
+    {
+      "path": "SinkingMap/worker/project.mjs",
+      "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/data/schema.json",
+      "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/LICENSE",
+      "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+      "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+      "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+      "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+      "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+      "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+      "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+      "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/src/blob.ts",
+      "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/src/history-file.ts",
+      "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/src/reader.ts",
+      "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/src/status-file.ts",
+      "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+    },
+    {
+      "path": "SinkingMap/worker/upstream/src/types.ts",
+      "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+    }
+  ]
+}

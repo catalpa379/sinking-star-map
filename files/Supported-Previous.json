@@ -1,0 +1,2258 @@
+{
+  "versions": [
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "7478C827348E397067F7E9C61D4FBA0CE8239C59451BBE67CFDB4DDDBB148A73"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "3CEED66EB0D7A53CD5890CC8F0FE761B659FC719929D07F05275B153D3AA1B5F"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "9F2ECEAD1E5B569424B634D0AEA19FB169D073E2DE879A4CF53B0F61C20E0B0B"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "9FA297A6BA49F8C9B9F8B90222B93C1068835B06F61175210B9C2964E335F167"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "7B5D07576D4D74577C6F81A9E38C01478805C3ABDA8ECFD83E0CC64FECD909C5"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "6B475CB530469DB2A0374DCF3FCE21014F75BD83FB7F5F57E83FF4FC7DE7B17C"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "CC84D036DD16795C5A174343C23EF769DEF7A416FD3153C2487D4F4BCCC57A90"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "B5A301AC022B41BAF534E7FE2714A62D6BC8D84607BB1A3679F73507B4D80841"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "C6CFBD9B46CA7B1E21DA1F02CC55B48829FAD4A2DD3CA71D72A50BBB00527966"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "57076BF292F0E3C7C18B6ADD124F115DDCB1987EB46DA7B83E872DE5C58644BA"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "99DA1EA64B3DB584550FC384EACF58C1218B2ED702A8E772A25A4C95EE75332D"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "F9BE70D576FD112B43360622EBD1D7F6785FFE1DB6C72805302E45E9E36A8273"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/data/progress.json",
+          "sha256": "5E715F554E7AC755B58B12C9F0C372A8304D3340A712D2393C5A2391794BDD7E"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/data/schema.json",
+          "sha256": "ED7E4AF047E5C3E3106D64EBCCD45A87912654A43329B16467A8EDD96645DB4B"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/LICENSE",
+          "sha256": "6FA703547E373803752EEEC69AA58BAC5C1CF756AE8004DE8B63BE684FE869D2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/package.json",
+          "sha256": "D218E29EC01186542B0D85BDC6691D12514E4CDD0BA3B9CD81F253250C8D1E34"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/blob.ts",
+          "sha256": "02A9CD7DA93461EAEFF647F8FB4C256A835178A659295D4EB140C96507623AE2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/data.ts",
+          "sha256": "E5ED3DC91F381F59A084E32093DC295D047E4B101DE002A0236E2809C07CB181"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/history-file.ts",
+          "sha256": "E5E1827AD64ADE46EC0AF20455D809718F8B279C316BBA95DA40B646FD3572AA"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/model/unlocking.ts",
+          "sha256": "5857496CA92B7CF3EA7B51EAE99432FFFAC9A1E12C31662341AA8F17F0D1EFFE"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/reader.ts",
+          "sha256": "D5DB8ED8F90A7301E7FB66A8EDB5E7A90A66F9142C2E6765769B67E73CDE779D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/save.ts",
+          "sha256": "7F284404EAB04D4CDACAFA413E3E925C2D12CA9B90121957B277AEE9DAF6DA14"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/status-file.ts",
+          "sha256": "1DBBA31E90328D4363E8FD5B0A49761B82DC881BB31DD6A256D2BE0877FD3FFF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/attacks.ts",
+          "sha256": "F636B9BABCD5228D2546B0B68C4CFABDA724B55C76076DFB1A53F4B3C9EB4E6E"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/beam-moves.ts",
+          "sha256": "77616244D77A32D3180B8A2064FAC73645B22436739D14A314CCE071A46A26CB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/beams.ts",
+          "sha256": "C6944BEAA4B04167820F6CAC904EA887EA13B5D0D90E46534B07F6424E128413"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/bridges.ts",
+          "sha256": "118FA474F716E718669E2D762703B472527F29B4ABDA36D273D4A2FD48AAF2BF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/cells.ts",
+          "sha256": "DE17796F9EFC8C189906C89C8EE0D8C95EA271D8FCF86AD2867FEF98B3E94EB9"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/elevator.ts",
+          "sha256": "4765840851DF7F431AA3D9CA7F9F6EE0F71F24E526AC44840C85B5EBC268DFAB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/flood.ts",
+          "sha256": "4EB3463CDE3FCCB43C79E47C28F8256283287F95B58F926F9B70E3CE1C5310BB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/freezers.ts",
+          "sha256": "28371811B6D7A64EAEC5567ECC2545E48D368575915B1094FBDBAE1120C8DB99"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/gates.ts",
+          "sha256": "925DE31994FB1E079784AF71EEE093675C6FBB953D0EE0C7E26E5D4BA4CD2AC0"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/geometry.ts",
+          "sha256": "FEDB03A3BA575BF3C08393C1457C86FE0B4469C2410A3CF14FC8E26E4C521C7F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/groups.ts",
+          "sha256": "C24F3951B3C7675BBD215B49D649E767909C552D685A7D06EC35D34815239BF6"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/lilies-and-rivers.ts",
+          "sha256": "1DFCAE47FE3691289C094C0DA860F78F590D4B2B95A81D43BC555F8E2B10A99F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/mechanics.ts",
+          "sha256": "B2DB9313337C831AF0167615A5FBC4B65481EE1BE785F0470F826B028337C3F8"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/mirror-isles.ts",
+          "sha256": "448D3756C4CC12ABD74DAACCE51B586C2407D84F8B3EFA5297DC7B2F8A25620F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/mirror-turns.ts",
+          "sha256": "373AD408DD6BF3F7C9B51F72871BA40B1C00728AF813345F04D133AA15D82D84"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/monster-gates.ts",
+          "sha256": "EE74759FC5B2517DC90AEDEF80B5FAC798B0EB573A1E54514C5419F37E6E3998"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/monster-pushes.ts",
+          "sha256": "9959BD7436B507661A27ECFD30D05A17C9BA452370517A40DFCD160F0814CAEB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/ocean.ts",
+          "sha256": "38FDC0ED37DD28D9B64159B137FC0CE1C801FB8C64B100349D0A34CAC67BF6D0"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/queue.ts",
+          "sha256": "840393DCD831B97A2CDED0C46EF96000692429293930B37458EEA1AD5BDBEEB2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/reachability.ts",
+          "sha256": "6F713E4278385EDEA604FE40BF77DE35CE6C262F2BE70D41EF3AD4A03CB2FBA9"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/rock-chains.ts",
+          "sha256": "4ADC198AE01E47D0E09871510DF4F0FB44E4073F5074C60750F29C7B64A8C51C"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/rock-turns.ts",
+          "sha256": "B64F974252CA41B4599CF7E4CDECCC92FCCF54992D0EB840EB7D21ABA7E8FBB1"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/room-answers.ts",
+          "sha256": "E11D98C95830C3449CC68D5A9351CB89E334E652EF2B90A47132DBDFC50F2DF5"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/room-search.ts",
+          "sha256": "DAD74B91E827E2CE0EAA59DE111259305838CF35319FBD4D854C6119CF0E164B"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/rovers.ts",
+          "sha256": "453454A568DFAA4E4DAC09238CA2B534C3D0A6EA8887771F72FFD794D4FF7EA2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/skills.ts",
+          "sha256": "4599CF5356A6ED9CB1B555D5F19EA965698C0C9027F303F2C9B99379BCB8BFA3"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/skipping-stones.ts",
+          "sha256": "BB800489C40DD5C1F527DC0CA14F68E365D4F21A18961B05A6052A31A5E9B51D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/sky.ts",
+          "sha256": "FF9A7552DFACCBF0958AEC6A1EB4F95FD18EC66861D0F53E993B08137C5BAA96"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/support.ts",
+          "sha256": "6B292452FFE86EC37D16FF33D7A444CFE340D57679749BF72A4B453F960F3BEF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/swaps.ts",
+          "sha256": "8D96C8EE09E69159DA97F53B6D4BF53A0051969283923779B2E5847AB13C95EB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/teleporters.ts",
+          "sha256": "0669733041DF2A0475EEB03BE0DD6BF93E9DC085E65222BE4979EA9AE9C09B62"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/transmute.ts",
+          "sha256": "C53B6B02D35BC7B66AF677FE0E005D03A1EC235F5FC0F8591DB5A150782AD46D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/walker.ts",
+          "sha256": "8E43AAA94A6BDEA15415AC40E7DE6E03AF49DC2CF54A2FCA710F01166C925FCE"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/src/walk/walls.ts",
+          "sha256": "6063A00894CC93850A987A3A9338E07D0591B6485285713FEED732FD9FF3156E"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine/UPSTREAM.txt",
+          "sha256": "AFFAB49818AF2CF896C48C8BDE9A76919FA285AAD0BBED298E9A2CA640997EAF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/data/progress.json",
+          "sha256": "94E4C0B8FFECA5C43F40CC5F66334A41DF2F64861899DC71D125AF18B6EAA190"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/data/schema.json",
+          "sha256": "ED7E4AF047E5C3E3106D64EBCCD45A87912654A43329B16467A8EDD96645DB4B"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/LICENSE",
+          "sha256": "6FA703547E373803752EEEC69AA58BAC5C1CF756AE8004DE8B63BE684FE869D2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/package.json",
+          "sha256": "D218E29EC01186542B0D85BDC6691D12514E4CDD0BA3B9CD81F253250C8D1E34"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/blob.ts",
+          "sha256": "02A9CD7DA93461EAEFF647F8FB4C256A835178A659295D4EB140C96507623AE2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/data.ts",
+          "sha256": "E5ED3DC91F381F59A084E32093DC295D047E4B101DE002A0236E2809C07CB181"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/history-file.ts",
+          "sha256": "E5E1827AD64ADE46EC0AF20455D809718F8B279C316BBA95DA40B646FD3572AA"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/model/unlocking.ts",
+          "sha256": "5857496CA92B7CF3EA7B51EAE99432FFFAC9A1E12C31662341AA8F17F0D1EFFE"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/reader.ts",
+          "sha256": "D5DB8ED8F90A7301E7FB66A8EDB5E7A90A66F9142C2E6765769B67E73CDE779D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/save.ts",
+          "sha256": "7F284404EAB04D4CDACAFA413E3E925C2D12CA9B90121957B277AEE9DAF6DA14"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/status-file.ts",
+          "sha256": "1DBBA31E90328D4363E8FD5B0A49761B82DC881BB31DD6A256D2BE0877FD3FFF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/attacks.ts",
+          "sha256": "F636B9BABCD5228D2546B0B68C4CFABDA724B55C76076DFB1A53F4B3C9EB4E6E"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/beam-moves.ts",
+          "sha256": "77616244D77A32D3180B8A2064FAC73645B22436739D14A314CCE071A46A26CB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/beams.ts",
+          "sha256": "C6944BEAA4B04167820F6CAC904EA887EA13B5D0D90E46534B07F6424E128413"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/bridges.ts",
+          "sha256": "118FA474F716E718669E2D762703B472527F29B4ABDA36D273D4A2FD48AAF2BF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/cells.ts",
+          "sha256": "DE17796F9EFC8C189906C89C8EE0D8C95EA271D8FCF86AD2867FEF98B3E94EB9"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/elevator.ts",
+          "sha256": "4765840851DF7F431AA3D9CA7F9F6EE0F71F24E526AC44840C85B5EBC268DFAB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/flood.ts",
+          "sha256": "4EB3463CDE3FCCB43C79E47C28F8256283287F95B58F926F9B70E3CE1C5310BB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/freezers.ts",
+          "sha256": "28371811B6D7A64EAEC5567ECC2545E48D368575915B1094FBDBAE1120C8DB99"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/gates.ts",
+          "sha256": "925DE31994FB1E079784AF71EEE093675C6FBB953D0EE0C7E26E5D4BA4CD2AC0"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/geometry.ts",
+          "sha256": "FEDB03A3BA575BF3C08393C1457C86FE0B4469C2410A3CF14FC8E26E4C521C7F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/groups.ts",
+          "sha256": "C24F3951B3C7675BBD215B49D649E767909C552D685A7D06EC35D34815239BF6"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/lilies-and-rivers.ts",
+          "sha256": "1DFCAE47FE3691289C094C0DA860F78F590D4B2B95A81D43BC555F8E2B10A99F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/mechanics.ts",
+          "sha256": "B2DB9313337C831AF0167615A5FBC4B65481EE1BE785F0470F826B028337C3F8"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/mirror-isles.ts",
+          "sha256": "448D3756C4CC12ABD74DAACCE51B586C2407D84F8B3EFA5297DC7B2F8A25620F"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/mirror-turns.ts",
+          "sha256": "373AD408DD6BF3F7C9B51F72871BA40B1C00728AF813345F04D133AA15D82D84"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/monster-gates.ts",
+          "sha256": "EE74759FC5B2517DC90AEDEF80B5FAC798B0EB573A1E54514C5419F37E6E3998"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/monster-pushes.ts",
+          "sha256": "9959BD7436B507661A27ECFD30D05A17C9BA452370517A40DFCD160F0814CAEB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/ocean.ts",
+          "sha256": "38FDC0ED37DD28D9B64159B137FC0CE1C801FB8C64B100349D0A34CAC67BF6D0"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/queue.ts",
+          "sha256": "840393DCD831B97A2CDED0C46EF96000692429293930B37458EEA1AD5BDBEEB2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/reachability.ts",
+          "sha256": "6F713E4278385EDEA604FE40BF77DE35CE6C262F2BE70D41EF3AD4A03CB2FBA9"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/rock-chains.ts",
+          "sha256": "4ADC198AE01E47D0E09871510DF4F0FB44E4073F5074C60750F29C7B64A8C51C"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/rock-turns.ts",
+          "sha256": "B64F974252CA41B4599CF7E4CDECCC92FCCF54992D0EB840EB7D21ABA7E8FBB1"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/room-answers.ts",
+          "sha256": "E11D98C95830C3449CC68D5A9351CB89E334E652EF2B90A47132DBDFC50F2DF5"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/room-search.ts",
+          "sha256": "DAD74B91E827E2CE0EAA59DE111259305838CF35319FBD4D854C6119CF0E164B"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/rovers.ts",
+          "sha256": "453454A568DFAA4E4DAC09238CA2B534C3D0A6EA8887771F72FFD794D4FF7EA2"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/skills.ts",
+          "sha256": "4599CF5356A6ED9CB1B555D5F19EA965698C0C9027F303F2C9B99379BCB8BFA3"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/skipping-stones.ts",
+          "sha256": "BB800489C40DD5C1F527DC0CA14F68E365D4F21A18961B05A6052A31A5E9B51D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/sky.ts",
+          "sha256": "FF9A7552DFACCBF0958AEC6A1EB4F95FD18EC66861D0F53E993B08137C5BAA96"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/support.ts",
+          "sha256": "6B292452FFE86EC37D16FF33D7A444CFE340D57679749BF72A4B453F960F3BEF"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/swaps.ts",
+          "sha256": "8D96C8EE09E69159DA97F53B6D4BF53A0051969283923779B2E5847AB13C95EB"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/teleporters.ts",
+          "sha256": "0669733041DF2A0475EEB03BE0DD6BF93E9DC085E65222BE4979EA9AE9C09B62"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/transmute.ts",
+          "sha256": "C53B6B02D35BC7B66AF677FE0E005D03A1EC235F5FC0F8591DB5A150782AD46D"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/walker.ts",
+          "sha256": "8E43AAA94A6BDEA15415AC40E7DE6E03AF49DC2CF54A2FCA710F01166C925FCE"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/src/walk/walls.ts",
+          "sha256": "6063A00894CC93850A987A3A9338E07D0591B6485285713FEED732FD9FF3156E"
+        },
+        {
+          "path": "SinkingMap/worker/reach-engine-26249670/UPSTREAM.txt",
+          "sha256": "8317C63FA2864F64966B52D6929D2E0AEB147AB5C574F993D9DE5BBF14FC7847"
+        },
+        {
+          "path": "SinkingMap/worker/reachable.mjs",
+          "sha256": "D82AFECD77A87C31BFF4357E81B742053EE1033380A7C79D8C02CE56113623BA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ],
+      "label": "0.1.7 complete offline release"
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "82351735EF2FB0BAC72363AC272499C4FC0B45269F6E96C3949C195DDD60501B"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/terrain/map-0.smt",
+          "sha256": "5ED6E2B7E8409414B4887B3DAAB44E26826890ABDA55901A2FC26CCFBC583C5D"
+        },
+        {
+          "path": "SinkingMap/terrain/map-1.smt",
+          "sha256": "6E654D9DAAE4CA7A37ECF4CEF6A58CB0F6F2C950904E3A274815E0D4931ABCFA"
+        },
+        {
+          "path": "SinkingMap/terrain/map-2.smt",
+          "sha256": "E10AA5AAD5DC091FCBD35CB1FA54C685DF1BC9928211ED22D699091B7C94C6A5"
+        },
+        {
+          "path": "SinkingMap/terrain/provenance.json",
+          "sha256": "5AFF31B8295F8DE15517943289F384530A490BFB2B806CE3C9072151FE5FCAD6"
+        },
+        {
+          "path": "SinkingMap/ui/ASSET-NOTES.txt",
+          "sha256": "EE19E9E79BBF29701B97BDCA0E4EECA050EA32BB1CF5810945909026CE3E6EED"
+        },
+        {
+          "path": "SinkingMap/ui/star-rosette.png",
+          "sha256": "F70F9F2B7E22114A90F8B36540959AC2124CD3D3E675D8884F5D2089B7D2DE44"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "146BB068CBAAC679BB6453E2B6309F0DEFE54AC1AEDD67AD0E18A91B5A419C6A"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "51AFE3AC67B900AF39C784901688C6079BCA9E24DAD83055F6197DB8847F8DA3"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "146BB068CBAAC679BB6453E2B6309F0DEFE54AC1AEDD67AD0E18A91B5A419C6A"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        }
+      ],
+      "label": "Verified local visual build 2026-10-29; original 0.1.5 worker payload and matching pre-0.1.6 rollback DLL"
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "3BB87CD342189C5B27658BE7AD5868056DBCA401FDD5DA73FBD4DAE80108C97F"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "146BB068CBAAC679BB6453E2B6309F0DEFE54AC1AEDD67AD0E18A91B5A419C6A"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "3BB87CD342189C5B27658BE7AD5868056DBCA401FDD5DA73FBD4DAE80108C97F"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "146BB068CBAAC679BB6453E2B6309F0DEFE54AC1AEDD67AD0E18A91B5A419C6A"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "F10B85F66344A18B4A2774C178E53A8BB8918358758696B3FC8990F0621EA90A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "C167090CF5BF056B9D6F87E47D4D3A40200BA48323D2664F7DB5872D8DB7FE61"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "3C4C25AD646FA686CCCF3146C82739F4D611579FA1CF043F4CD1C278BAE82289"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "DCF7343AE452E626044AD8B36E832E4476C647E3490E5A463C989AC14B2090B8"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "path": "dxgi.dll",
+          "sha256": "C212E1912CE185960E4831B944F35492EDFB2C9B8E3F8CA376D5E20BFB844D36"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING.RUNTIME",
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6"
+        },
+        {
+          "path": "SinkingMap/licenses/COPYING3",
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B"
+        },
+        {
+          "path": "SinkingMap/licenses/winpthreads.txt",
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67"
+        },
+        {
+          "path": "SinkingMap/runtime/LICENSE.txt",
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021"
+        },
+        {
+          "path": "SinkingMap/runtime/node.exe",
+          "sha256": "D702DAA815EABBFF763C7D3808E235CF031CF2CA70211B56847BC72F51E240E5"
+        },
+        {
+          "path": "SinkingMap/worker/main.mjs",
+          "sha256": "3C4C25AD646FA686CCCF3146C82739F4D611579FA1CF043F4CD1C278BAE82289"
+        },
+        {
+          "path": "SinkingMap/worker/project.mjs",
+          "sha256": "DCF7343AE452E626044AD8B36E832E4476C647E3490E5A463C989AC14B2090B8"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/LICENSE",
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/data/schema.json",
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/blob.ts",
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/history-file.ts",
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/reader.ts",
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/status-file.ts",
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/src/types.ts",
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts",
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts",
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts",
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts",
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts",
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts",
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D"
+        },
+        {
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts",
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "sha256": "C212E1912CE185960E4831B944F35492EDFB2C9B8E3F8CA376D5E20BFB844D36",
+          "path": "dxgi.dll"
+        },
+        {
+          "sha256": "71641C80A656855E6A8E518CDD243EB380682B14211EB927557C949E7CC063F7",
+          "path": "SinkingMap/MapTestHost.exe"
+        },
+        {
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB",
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt"
+        },
+        {
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6",
+          "path": "SinkingMap/licenses/COPYING.RUNTIME"
+        },
+        {
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B",
+          "path": "SinkingMap/licenses/COPYING3"
+        },
+        {
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67",
+          "path": "SinkingMap/licenses/winpthreads.txt"
+        },
+        {
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021",
+          "path": "SinkingMap/runtime/LICENSE.txt"
+        },
+        {
+          "sha256": "6D75619E8720161BB0E8C5617BCF90384B48A920B9182EC6E9D52F11F83A8E84",
+          "path": "SinkingMap/runtime/node.exe"
+        },
+        {
+          "sha256": "3C4C25AD646FA686CCCF3146C82739F4D611579FA1CF043F4CD1C278BAE82289",
+          "path": "SinkingMap/worker/main.mjs"
+        },
+        {
+          "sha256": "DCF7343AE452E626044AD8B36E832E4476C647E3490E5A463C989AC14B2090B8",
+          "path": "SinkingMap/worker/project.mjs"
+        },
+        {
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609",
+          "path": "SinkingMap/worker/upstream/LICENSE"
+        },
+        {
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012",
+          "path": "SinkingMap/worker/upstream/data/schema.json"
+        },
+        {
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA",
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts"
+        },
+        {
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD",
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts"
+        },
+        {
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51",
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts"
+        },
+        {
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934",
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts"
+        },
+        {
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F",
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts"
+        },
+        {
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D",
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts"
+        },
+        {
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904",
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts"
+        },
+        {
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15",
+          "path": "SinkingMap/worker/upstream/src/blob.ts"
+        },
+        {
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784",
+          "path": "SinkingMap/worker/upstream/src/history-file.ts"
+        },
+        {
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428",
+          "path": "SinkingMap/worker/upstream/src/reader.ts"
+        },
+        {
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F",
+          "path": "SinkingMap/worker/upstream/src/status-file.ts"
+        },
+        {
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A",
+          "path": "SinkingMap/worker/upstream/src/types.ts"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "sha256": "EFFCAC49E71CCFF71C0E840924F086E936E388A10ED7823B87E74F2235334459",
+          "path": "dxgi.dll"
+        },
+        {
+          "sha256": "B59D7FB784FFF2ECDD445FB9A7235CE27BCAE30F4B374AF188D1A178B6D67860",
+          "path": "SinkingMap/MapTestHost.exe"
+        },
+        {
+          "sha256": "E7A33FD8D164ABD188EE629BBE3B07912419B29192A6BBFDCE29DE0AD4F0E7FB",
+          "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt"
+        },
+        {
+          "sha256": "90077BA306EE9D8ED966CAB1B4ABD69B6E728ACF08777283CC50283CD9503FA6",
+          "path": "SinkingMap/licenses/COPYING.RUNTIME"
+        },
+        {
+          "sha256": "0B383D5A63DA644F628D99C33976EA6487ED89AAA59F0B3257992DEAC1171E6B",
+          "path": "SinkingMap/licenses/COPYING3"
+        },
+        {
+          "sha256": "1C8D23063C3772B9435831410B31B51FEF3D9CF2138A442DC367EF5D72239F67",
+          "path": "SinkingMap/licenses/winpthreads.txt"
+        },
+        {
+          "sha256": "05C4D2C77251CACEFF994868EAE57385E8A88172FC5BE24AA70EE369311E8021",
+          "path": "SinkingMap/runtime/LICENSE.txt"
+        },
+        {
+          "sha256": "6D75619E8720161BB0E8C5617BCF90384B48A920B9182EC6E9D52F11F83A8E84",
+          "path": "SinkingMap/runtime/node.exe"
+        },
+        {
+          "sha256": "0C9CB1735CDA7666FD52F2A937A1FD4B2FE0B14C09855969A2E2BF2A143F62CA",
+          "path": "SinkingMap/worker/main.mjs"
+        },
+        {
+          "sha256": "792CC1607CEDC5B9EC86E6D044BBA19EFDE26E2FD499694B68B66CAB0A81932B",
+          "path": "SinkingMap/worker/project.mjs"
+        },
+        {
+          "sha256": "C4171CEF393D1A9CC402263348A0610B166841901D4D6C4FC2D50EF811885609",
+          "path": "SinkingMap/worker/upstream/LICENSE"
+        },
+        {
+          "sha256": "5AF9EEF481EACCFCD8993FE2F3B9D8E6CEB16708E826BC6584AA36801D50C012",
+          "path": "SinkingMap/worker/upstream/data/schema.json"
+        },
+        {
+          "sha256": "641831EDDAAD70E6A94EFC65B26F6E082FFE58C1B3C64BB7325BF9AF473D3AFA",
+          "path": "SinkingMap/worker/upstream/scripts/lib/archive.ts"
+        },
+        {
+          "sha256": "25253FF02B2C01CBCB712BB45025FB79CEFFFEC80C6B444044DE561C071B7ADD",
+          "path": "SinkingMap/worker/upstream/scripts/lib/fields.ts"
+        },
+        {
+          "sha256": "08772B9501658B0FA8AB62B7E3F2FD03C1F474ED8113654F129BFECA64D93F51",
+          "path": "SinkingMap/worker/upstream/scripts/lib/layers.ts"
+        },
+        {
+          "sha256": "ADB8D1B796DD5723FC8CEBC445C006197C0A200D4F217E542DED4976DC2EA934",
+          "path": "SinkingMap/worker/upstream/scripts/lib/math.ts"
+        },
+        {
+          "sha256": "610BA8051B0AFD521D302F407C4FE5840983C20E295041E0F331A8041B5DA18F",
+          "path": "SinkingMap/worker/upstream/scripts/lib/package.ts"
+        },
+        {
+          "sha256": "40112A27FF24BED6F9F22A8C061219B2BB7394DB4F3A36F89C6151747EDEF53D",
+          "path": "SinkingMap/worker/upstream/scripts/lib/paths.ts"
+        },
+        {
+          "sha256": "541F24D82D9B5636722DED7B3ECE9EB71503EC5D358791B3A8C4F55B3C8E1904",
+          "path": "SinkingMap/worker/upstream/scripts/lib/voxels.ts"
+        },
+        {
+          "sha256": "1435E6F8D6AAFDB77BEC7595D8973FC05665740821D733AB5485C3113777DD15",
+          "path": "SinkingMap/worker/upstream/src/blob.ts"
+        },
+        {
+          "sha256": "12E0418F474CCA4ADBFE7E27BB52234131194D58457BC4B0083F1769EF038784",
+          "path": "SinkingMap/worker/upstream/src/history-file.ts"
+        },
+        {
+          "sha256": "90DA9A063F08C6CE4AA6A125AD2B3C26ABF04F76ABBB80564CA17E4E97A74428",
+          "path": "SinkingMap/worker/upstream/src/reader.ts"
+        },
+        {
+          "sha256": "09DEABC64B4D0BD136B404215BEC21EC1D832F352EAE68306F363095A1B7EF9F",
+          "path": "SinkingMap/worker/upstream/src/status-file.ts"
+        },
+        {
+          "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A",
+          "path": "SinkingMap/worker/upstream/src/types.ts"
+        }
+      ]
+    }
+  ]
+}

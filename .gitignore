@@ -1,0 +1,18 @@
+# Local build products and release binaries
+build/
+dist/
+*.exe
+*.dll
+*.zip
+*.bmp
+*.log
+# Game-derived terrain and local assets are not part of this source repository
+*.smt
+files/SinkingMap/
+files/package-integrity.json
+# Saves and personal settings
+*.history
+*.sokoban_status
+controls.ini
+.terrain-cache/
+.vscode/
