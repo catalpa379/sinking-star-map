@@ -39,7 +39,7 @@
 |---|---|
 | ![未完成详情](docs/images/detail-unfinished.png) | ![已完成详情](docs/images/detail-complete.png) |
 
-以上是原生绘制路径的离屏预览；详情卡使用合成示例数据，不包含私人存档。它们不代表长期游戏内兼容性验收。
+详情卡使用示例数据。
 
 ## 下载与安装
 
@@ -99,6 +99,6 @@ node --test source/tests/privacy.test.mjs source/tests/refresh.test.mjs source/t
 
 - 地图底图：**joric** 的[沉星之序互动地图](https://joric.github.io/ootss/)、[主仓库](https://github.com/joric/ootss)及[底图库](https://github.com/joric/ootss_tileset)。
 - 存档及资源解析：复用 **xPaw** 的[order-of-the-sinking-cost](https://github.com/xPaw/order-of-the-sinking-cost)部分MIT代码，保留原始许可。
-- 游戏美术和字体属于其原权利人，底图不声称为本工具原创。
+- 游戏美术和字体属于各自的权利人。
 
-新增代码采用 [MIT](LICENSE)。第三方代码保留原许可；软件代码许可不自动覆盖游戏美术和地图图片。详细来源和核对记录见 [THIRD_PARTY.md](THIRD_PARTY.md)。本工具与游戏官方无隶属或背书关系。
+新增代码采用 [MIT](LICENSE)。第三方素材与依赖的来源和许可见 [THIRD_PARTY.md](THIRD_PARTY.md)。
