@@ -43,9 +43,11 @@
 
 ## 下载与安装
 
-源码已在本仓库提供。**完整离线安装包正在整理上传，尚未挂到 Releases。** 普通玩家应下载完整离线ZIP，不需要自己编译，也不要直接用GitHub的“Download ZIP”当作安装包。
+**[下载 0.1.16 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.16) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-SHA256.txt)
 
-完整离线包发布后，安装步骤为：
+普通玩家不需要编译。请下载完整离线安装包，不要把 GitHub 自动生成的 Source code 或仓库的“Download ZIP”当作安装包。校验文件中记录的是安装包上传前的中文文件名；下载后的英文文件名不同，但 SHA256 值相同。
+
+安装步骤：
 
 1. 完整解压安装包。
 2. 正常退出游戏，运行“安装与卸载.exe”。
