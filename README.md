@@ -5,24 +5,40 @@
   <img alt="平台" src="https://img.shields.io/badge/platform-Windows%20x64-4476b5">
   <a href="LICENSE"><img alt="代码许可 MIT" src="https://img.shields.io/badge/license%20%28code%29-MIT-739b82"></a>
 </p>
-<p align="center"><a href="#功能">功能</a> · <a href="#界面预览">界面预览</a> · <a href="#下载与安装">下载与安装</a> · <a href="#兼容性">兼容性</a> · <a href="#常见问题">常见问题</a> · <a href="#来源与鸣谢">来源鸣谢</a></p>
 
 《沉星之序》（Order of the Sinking Star）的非官方 Windows 地图工具。玩到后期找不到之前漏掉的谜题时，可以读取本地存档，在地图上查看未完成地点。
 
 **默认保留探索迷雾，也可主动开启剧透模式，查看全地图未完成谜题。**
 
-## 功能
+**当前版本：0.1.16 测试版。** 支持 Steam Build **26006400 / 26249670** 的匹配版本。详见 [发布说明](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.16)。
 
-| 功能 | 说明 |
+## 下载与安装
+
+**[下载 0.1.16 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.16) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-SHA256.txt)
+
+玩家可直接下载完整离线安装包。校验文件中记录的是安装包上传前的中文文件名；下载后的英文文件名不同，但 SHA256 值相同。
+
+安装步骤：
+
+1. 完整解压安装包。
+2. 正常退出游戏，运行“安装与卸载.exe”。
+3. 核对Steam游戏目录，点击“安装 / 更新”。
+4. 启动游戏，用设置的按键打开地图，选择与游戏一致的档案。
+
+初始打开/关闭按键为 **F8**，刷新为 **F5**，均可在安装器或地图右上角“按键设置”中修改。卸载使用对应版本安装器，未知文件、存档、按键设置与旧版备份保留。
+
+## 操作
+
+| 按键或操作 | 功能 |
 |---|---|
-| 查漏补缺 | 区分已完成和未完成谜题，支持完成状态筛选 |
-| 迷雾保留 | 默认按所选存档已揭露的范围显示、搜索和计数 |
-| 剧透模式 | 在“更多 → 显示范围”中主动选择“全地图未完成（剧透）” |
-| 搜索与区域汇总 | 搜索已显示地点，按区域查看去重后的完成数量 |
-| 分层地图 | 根据存档已揭露的地图层切换，支持缩放和拖动 |
-| 自定义按键 | 打开/关闭地图、刷新地图的按键均可修改 |
-| 本地读取 | 根据最近一次存档生成结果 |
-| 核实更新 | 校验完整旧载荷后更新并保留备份，遇到未知DLL或被修改文件会停止覆盖 |
+| F8 | 打开 / 关闭地图 |
+| F5 | 刷新地图 |
+| 按键设置 | 在安装器或地图右上角修改快捷键 |
+| 搜索与筛选 | 按名称、区域或完成状态查找地点 |
+| 地图操作 | 缩放、拖动地图，切换存档已揭露的地图层 |
+| 剧透模式 | 在“更多 → 显示范围”选择“全地图未完成（剧透）” |
+
+地图以最近一次存档为准，保存游戏后可手动刷新。默认搜索和计数基于所选存档已揭露的范围，谜题按地点去重。关闭地图、切档或失焦后恢复默认显示范围。
 
 ## 界面预览
 
@@ -41,22 +57,7 @@
 
 详情卡使用示例数据。
 
-## 下载与安装
-
-**[下载 0.1.16 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.16) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-SHA256.txt)
-
-玩家可直接下载完整离线安装包。校验文件中记录的是安装包上传前的中文文件名；下载后的英文文件名不同，但 SHA256 值相同。
-
-安装步骤：
-
-1. 完整解压安装包。
-2. 正常退出游戏，运行“安装与卸载.exe”。
-3. 核对Steam游戏目录，点击“安装 / 更新”。
-4. 启动游戏，用设置的按键打开地图，选择与游戏一致的档案。
-
-初始打开/关闭按键为 **F8**，刷新为 **F5**，均可在安装器或地图右上角“按键设置”中修改。卸载使用对应版本安装器，未知文件、存档、按键设置与旧版备份保留。
-
-## 兼容性
+## 适用范围
 
 | 项目 | 当前范围 |
 |---|---|
@@ -66,18 +67,6 @@
 | 尚未全面验收 | HDR、独占全屏、多显示器、长期游戏内交互及跨电脑兼容 |
 
 游戏更新后可能需要重新适配；遇到未知版本时会停止读取或安装。
-
-## 常见问题
-
-**为什么游戏里变化了，地图没有变化？** 结果以最近一次保存为准，需要手动刷新。
-
-**默认会把全地图剧透出来吗？** 默认保留迷雾。全地图未完成模式需要主动开启；返回已探索范围恢复迷雾。演示中仍可能出现演示者已经探索到的后期地形。
-
-**统计数字是全游戏谜题总数吗？** 默认统计当前存档已揭露、可以确认的谜题，按谜题去重。
-
-**安装提示已有其他dxgi.dll怎么办？** 先核对现有模组及文件来源。安装器遇到未知 DLL 时会停止覆盖。
-
-**反馈问题需要发存档吗？** 优先提供工具版本、游戏Build、Windows版本、窗口模式、复现步骤与错误信息。截图可遮住档案名、用户名及进度。
 
 ## 源码与构建
 
@@ -95,10 +84,6 @@ node --test source/tests/privacy.test.mjs source/tests/refresh.test.mjs source/t
 
 逻辑测试使用 Node.js 24。真实存档集成测试需要本机受支持游戏与独立临时目录。
 
-## 来源与鸣谢
+## 许可证
 
-- 地图底图：**joric** 的[沉星之序互动地图](https://joric.github.io/ootss/)、[主仓库](https://github.com/joric/ootss)及[底图库](https://github.com/joric/ootss_tileset)。
-- 存档及资源解析：复用 **xPaw** 的[order-of-the-sinking-cost](https://github.com/xPaw/order-of-the-sinking-cost)部分MIT代码，保留原始许可。
-- 游戏美术和字体属于各自的权利人。
-
-新增代码采用 [MIT](LICENSE)。第三方素材与依赖的来源和许可见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+项目新增代码采用 [MIT](LICENSE)。第三方组件和素材的来源与许可见 [THIRD_PARTY.md](THIRD_PARTY.md)。
