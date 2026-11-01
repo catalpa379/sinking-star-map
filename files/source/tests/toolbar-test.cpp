@@ -6,9 +6,17 @@ int main(){using namespace sm;
  clientW=980;clientH=620;uiScale=1;showAllUnfinished=false;onlyUnsolved=true;
  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(275,80));assert(!onlyUnsolved);
  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(352,80));assert(onlyUnsolved);
- onlyUnsolved=false;toolbarAction(AllScope);assert(showAllUnfinished&&onlyUnsolved);
+ onlyUnsolved=false;proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(460,80));assert(showAllUnfinished&&onlyUnsolved);
  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(275,80));assert(onlyUnsolved);
- toolbarAction(AllScope);assert(showAllUnfinished);toolbarAction(KnownScope);assert(!showAllUnfinished&&!onlyUnsolved);
+ proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(460,80));assert(!showAllUnfinished&&!onlyUnsolved);
+ for(double scale:{1.,1.5,2.}){
+  uiScale=scale;onlyUnsolved=true;
+  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM((int)(460*scale),(int)(80*scale)));assert(showAllUnfinished&&onlyUnsolved);
+  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM((int)(460*scale),(int)(80*scale)));assert(!showAllUnfinished&&onlyUnsolved);
+ }
+ uiScale=1;
+ proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(460,80));resetScope();assert(!showAllUnfinished);
+ auto menu=createMoreMenu();assert(GetMenuItemCount(menu)==3);DestroyMenu(menu);
  data.open={{0,0,0,10,10},{2,0,0,5,5}};layer=0;
  proc(nullptr,WM_LBUTTONDOWN,0,MAKELPARAM(100,80));assert(layer==2);
  toolbarAction(DefaultView);assert(layer==2);

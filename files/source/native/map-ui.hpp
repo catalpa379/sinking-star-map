@@ -75,7 +75,8 @@ void paint(HDC dc){
  fill(dc,{224,74,225,90},edge);
  button(dc,L"全部",244,66,64,!onlyUnsolved&&!showAllUnfinished);button(dc,L"未完成",308,66,88,onlyUnsolved||showAllUnfinished);
  if(showAllUnfinished){label(dc,L"全部",{252,66,300,98},muted,14,false,DT_CENTER|DT_VCENTER|DT_SINGLELINE);}
- if(showAllUnfinished)label(dc,L"剧透范围",{244,44,396,62},amber,12,false,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+ // Frequent scope control sits beside the completion filters; text and fill both indicate its state.
+ button(dc,showAllUnfinished?L"剧透：开":L"剧透：关",412,66,112,showAllUnfinished);
  button(dc,L"刷新",mapRight-88,66,72);
  int sx=clientW-side+24,right=clientW-24;
  label(dc,L"当前档案",{sx,14,right,35},muted,12);label(dc,L"须与游戏使用的档案一致",{sx,80,right,104},muted,12);

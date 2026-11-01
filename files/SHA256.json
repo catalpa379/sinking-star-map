@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "dxgi.dll",
-      "sha256": "3B9963AFE00275B816862BFDF475CA1D706B452AA7FE994637EC63157CD62E49"
+      "sha256": "E39E424349E9A2555D09250CFEC8E4FD1C4927B7CE844397BB293DF400D60DC1"
     },
     {
       "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",

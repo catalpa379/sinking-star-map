@@ -190,19 +190,20 @@ void drawMarker(HDC dc,const Mark&m,POINT p,bool active){
 }
 #include "map-ui.hpp"
 bool menuOpen=false;
-enum MenuAction{DefaultView=501,OpenSaveFolder,LocateSaved,KnownScope,AllScope};
+enum MenuAction{DefaultView=501,OpenSaveFolder,LocateSaved};
 void toolbarAction(int id){
  if(id==DefaultView)reset();
  else if(id==OpenSaveFolder)ShellExecuteW(wnd,L"open",saveRoot.c_str(),nullptr,nullptr,SW_SHOWNORMAL);
  else if(id==LocateSaved)centerPlayer();
- else if((id==KnownScope&&showAllUnfinished)||(id==AllScope&&!showAllUnfinished))toggleAllUnfinished();
  InvalidateRect(wnd,nullptr,FALSE);
 }
-void moreMenu(){
- HMENU menu=CreatePopupMenu(),scope=CreatePopupMenu();
+HMENU createMoreMenu(){
+ HMENU menu=CreatePopupMenu();
  AppendMenuW(menu,MF_OWNERDRAW,DefaultView,L"恢复默认视图");AppendMenuW(menu,MF_OWNERDRAW,LocateSaved,L"定位最近存档位置");AppendMenuW(menu,MF_OWNERDRAW,OpenSaveFolder,L"打开存档文件夹");
- AppendMenuW(scope,MF_OWNERDRAW|(showAllUnfinished?0:MF_CHECKED),KnownScope,L"已探索区域");AppendMenuW(scope,MF_OWNERDRAW|(showAllUnfinished?MF_CHECKED:0),AllScope,L"全地图未完成（剧透）");
- AppendMenuW(menu,MF_POPUP|MF_OWNERDRAW,(UINT_PTR)scope,L"显示范围");
+ return menu;
+}
+void moreMenu(){
+ HMENU menu=createMoreMenu();
  POINT p{(LONG)((clientW-side-184)*uiScale),(LONG)(50*uiScale)};ClientToScreen(wnd,&p);menuOpen=true;
  int result=TrackPopupMenu(menu,TPM_RETURNCMD|TPM_LEFTALIGN|TPM_TOPALIGN,p.x,p.y,0,wnd,nullptr);menuOpen=false;DestroyMenu(menu);if(result)toolbarAction(result);
 }
@@ -246,6 +247,7 @@ LRESULT CALLBACK proc(HWND w,UINT msg,WPARAM wp,LPARAM lp){
   if(y>=66&&y<98){
    if(x>=244&&x<308&&!showAllUnfinished){onlyUnsolved=false;selected=-1;}
    else if(x>=308&&x<396){onlyUnsolved=true;selected=-1;}
+   else if(x>=412&&x<524)toggleAllUnfinished();
    else if(x>=clientW-side-88&&x<clientW-side-16)refresh();
    else {int bx=18;for(int i=0;i<3;i++){bool known=false;for(auto&r:data.open)if(r.l==i)known=true;if(known){if(x>=bx&&x<bx+58){layer=i;selected=-1;reset();}bx+=66;}}}
    InvalidateRect(w,nullptr,FALSE);return 0;
