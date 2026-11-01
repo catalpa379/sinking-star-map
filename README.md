@@ -16,8 +16,6 @@
 
 **[下载 0.1.16 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.16) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.16/Sinking-Star-Map-0.1.16-SHA256.txt)
 
-玩家可直接下载完整离线安装包。校验文件中记录的是安装包上传前的中文文件名；下载后的英文文件名不同，但 SHA256 值相同。
-
 安装步骤：
 
 1. 完整解压安装包。
