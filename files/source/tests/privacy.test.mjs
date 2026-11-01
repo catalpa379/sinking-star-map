@@ -33,6 +33,34 @@ test('uncleared local fog box conceals markers, titles and its entire background
 test('fog boxes cross the wrapping seam conservatively',()=>{
  let es=fixture();es[2].fields['base.position.x']=0;es.push(e(5,'Fog_Of_War',{'base.position.x':19.5,'base.position.y':2,'props.box_extents.x':2,'props.box_extents.y':2}));assert.equal(out(es).markers.length,0);
 });
+test('local fog masks points by height without revealing raster pixels or unknown screens',()=>{
+ const es=fixture();es[2].fields['base.position.z']=19;
+ es.push(e(5,'Fog_Of_War',{'base.position.x':2,'base.position.y':2,'base.position.z':60,'props.box_extents.x':3,'props.box_extents.y':3,'props.box_extents.z':10,region_states:[0]}));
+ es.push(e(6,'Level_Entry',{'base.position.x':2,'base.position.y':2,'base.position.z':60,level_name:'HIGH_SECRET'}));
+ const s=out(es);assert.deepEqual(s.markers.map(m=>m.key),['visible']);assert.deepEqual(s.visiblePoints,[{l:0,x:2,y:2,z:19}]);
+ assert(!s.open.some(r=>2>=r.x&&2<r.x+r.w&&2>=r.y&&2<r.y+r.h));assert(!protocol(s).includes('HIGH_SECRET'));assert(!protocol(s).includes('SECRET_name'));
+ for(const z of [50,60,70]){es[2].fields['base.position.z']=z;assert.equal(out(es).markers.length,0);}
+ es[2].fields['base.position.z']=71;assert.equal(out(es).markers.length,1);
+ delete es[4].fields['props.box_extents.z'];assert.equal(out(es).markers.length,0);
+});
+test('height-aware points still obey overlapping fog and primary discovery',()=>{
+ const es=fixture();es.push(e(5,'Fog_Of_War',{'base.position.x':2,'base.position.y':2,'base.position.z':60,'props.box_extents.x':3,'props.box_extents.y':3,'props.box_extents.z':10}));
+ assert.equal(out(es).markers.length,1);
+ es.push(e(6,'Fog_Of_War',{'base.position.x':2,'base.position.y':2,'base.position.z':0,'props.box_extents.x':3,'props.box_extents.y':3,'props.box_extents.z':1}));assert.equal(out(es).markers.length,0);
+ es.pop();es[1].fields.region_states=[0,0];assert.equal(out(es).markers.length,0);
+});
+test('overhang-only geometry does not hide revealed entrances or open unknown primary fog',()=>{
+ const es=fixture();es.push(e(5,'Fog_Of_War',{only_overhang_no_fog:true,'base.position.x':10,'base.position.y':2,'props.box_extents.x':20,'props.box_extents.y':4}));
+ const s=out(es);assert.deepEqual(s.markers.map(m=>m.key),['visible']);assert(!s.open.some(r=>12>=r.x&&12<r.x+r.w));
+ es.at(-1).fields.only_overhang_no_fog=false;assert.equal(out(es).markers.length,0);
+});
+test('save counter is independent of map coverage, flags and spoiler mode',()=>{
+ const s={...status,levelsSolved:833};const normal=out(fixture(),s);
+ assert.equal(normal.savedSolved,833);assert.equal(normal.markers.length,1);assert(protocol(normal).includes('\nG\t833\n'));
+ assert.equal(project(fixture(),s,new Map(),null,{showAllUnfinished:true}).savedSolved,833);
+ assert.equal(out(fixture(),{...s,levelsSolved:0}).savedSolved,0);
+ for(const value of [-1,1.5,NaN,100001,undefined])assert.equal(out(fixture(),{...s,levelsSolved:value}).savedSolved,undefined);
+});
 test('unknown, nonexisting or cyclic groups and destroyed entries are hidden',()=>{
  for(const state of ['unknown','cycle','off','destroyed']){
   let es=fixture();es[2].fields['base.group_id']=99;

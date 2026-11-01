@@ -43,17 +43,25 @@ export function project(entities,status,translate=new Map(),hero=null,options={}
  // Project the full footprint of an unknown box onto the map, including boxes crossing the torus seam.
  const boxes=[];
  for(const e of fogs.filter(e=>!e.fields.primary)){
+  // These entities draw an overhang only; they do not conceal the map.
+  if(e.fields.only_overhang_no_fog===true)continue;
   const a=e.fields.region_states;
   if(Array.isArray(a)&&a.length===1&&a[0]===2)continue;
   const p=positionOf(e.fields),ext=['x','y'].map(k=>e.fields['props.box_extents.'+k]);
   if(!finite([...p,...ext])||ext.some(x=>x<0))throw Error('无法确认局部迷雾边界');
-  // Even only_overhang boxes are conservatively masked until positively cleared.
-  for(const dx of [-grid[0],0,grid[0]])for(const dy of [-grid[1],0,grid[1]])boxes.push({l:layer(e),x:p[0]-ext[0]+dx,y:p[1]-ext[1]+dy,w:2*ext[0],h:2*ext[1]});
+  // Only relax point masking when the volume's vertical extent is known and upright.
+  // Raster backgrounds have no height information and keep the full 2D mask.
+  const ez=e.fields['props.box_extents.z'],sz=e.fields['base.scale.z']??1,axes=localAxes(e.fields);
+  const upright=finite(axes.flat())&&Math.abs(Math.abs(axes[2][2])-1)<1e-6;
+  const dz=Number.isFinite(ez)&&ez>=0&&Number.isFinite(sz)&&sz!==0&&upright?ez*Math.abs(sz):Infinity;
+  // Actual local fog remains masked until positively cleared.
+  for(const dx of [-grid[0],0,grid[0]])for(const dy of [-grid[1],0,grid[1]])boxes.push({l:layer(e),x:p[0]-ext[0]+dx,y:p[1]-ext[1]+dy,w:2*ext[0],h:2*ext[1],minZ:p[2]-dz,maxZ:p[2]+dz});
  }
  const region=(x,y)=>{
   const p=wrap([x,y,0]);return Math.floor((p[0]-corner[0])/screen[0])+count[0]*Math.floor((p[1]-corner[1])/screen[1]);
  };
  const visible=(l,x,y)=>(showAllUnfinished&&l>=0&&l<=2&&!!table[l])||(primaries.get(l)?.[region(x,y)]===2&&!boxes.some(b=>b.l===l&&x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+b.h));
+ const pointVisible=(l,x,y,z)=>visible(l,x,y)||(primaries.get(l)?.[region(x,y)]===2&&!boxes.some(b=>b.l===l&&x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+b.h&&z>=b.minZ&&z<=b.maxZ));
  function subtract(r,b){
   const x=Math.max(r.x,b.x),y=Math.max(r.y,b.y),xx=Math.min(r.x+r.w,b.x+b.w),yy=Math.min(r.y+r.h,b.y+b.h);
   if(x>=xx||y>=yy)return [r];
@@ -112,7 +120,7 @@ export function project(entities,status,translate=new Map(),hero=null,options={}
  const markers=[],countKeys=new Map();
  for(const e of byType('Level_Entry')){
   const f=e.fields,p=wrap(positionOf(f)),l=layer(e),flags=f['base.entity_flags']||[];
-  if(l>2||!finite(p)||!present(e,showAllUnfinished)||!visible(l,p[0],p[1])||f.currently_broken===true||f.currently_disfavored===true||flags.some(x=>/BROKEN|DISFAVORED/.test(x)))continue;
+  if(l>2||!finite(p)||!present(e,showAllUnfinished)||!pointVisible(l,p[0],p[1],p[2])||f.currently_broken===true||f.currently_disfavored===true||flags.some(x=>/BROKEN|DISFAVORED/.test(x)))continue;
   const id=f.level_name;if(typeof id!=='string'||!id)continue;
   const bits=states.get(id);
   // A complete valid Status table authoritatively lists wins. An absent level is unsolved, never a parse fallback.
@@ -137,12 +145,18 @@ export function project(entities,status,translate=new Map(),hero=null,options={}
   const p=wrap(hero),l=groundLayer(table,p[2]);if(visible(l,p[0],p[1]))player={l,x:p[0],y:p[1],z:p[2]};
  }
  const snapshot={open,markers,terrain:[...terrainMap.values()],player};
+ const visiblePoints=markers.filter(m=>!visible(m.l,m.x,m.y)).map(({l,x,y,z})=>({l,x,y,z}));
+ if(visiblePoints.length)snapshot.visiblePoints=visiblePoints;
+ // Use the game's stored counter, not a count of filtered map entrances or win flags.
+ if(Number.isInteger(status.levelsSolved)&&status.levelsSolved>=0&&status.levelsSolved<=100000)snapshot.savedSolved=status.levelsSolved;
  if(showAllUnfinished)snapshot.allUnfinished=true;
  return snapshot;
 }
 export function protocol(snapshot){
  const lines=['SMAP1'];
+ if(snapshot.savedSolved!==undefined)lines.push(['G',snapshot.savedSolved].join('\t'));
  if(snapshot.allUnfinished===true)lines.push('M\tALL_UNFINISHED');
+ for(const p of snapshot.visiblePoints??[])lines.push(['V',p.l,p.x,p.y,p.z].join('\t'));
  for(const r of snapshot.open)lines.push(['O',r.l,r.x,r.y,r.w,r.h].join('\t'));
  for(const t of snapshot.terrain)lines.push(['T',t.l,t.x,t.y,t.z].join('\t'));
  for(const m of snapshot.markers)lines.push(['P',m.l,m.x,m.y,m.z,m.state,m.id,m.key,m.name,m.area,m.countKey].join('\t'));

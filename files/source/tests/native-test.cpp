@@ -8,8 +8,14 @@ int main(int argc,char**argv){
  Gdiplus::GdiplusStartupInput startup;assert(Gdiplus::GdiplusStartup(&gdiplusToken,&startup,nullptr)==Gdiplus::Ok);
  auto s=parse("SMAP1\nO\t0\t0\t0\t10\t10\nP\t0\t2\t2\t0\t0\t#1\t\tknown\tarea\t#1\nEND");
  assert(covers(s,0,2,2));assert(!covers(s,0,12,2));assert(!covers(s,1,2,2));
+ auto pointOnly=parse("SMAP1\nV\t0\t2\t2\t19\nP\t0\t2\t2\t19\t1\t#low\tlow\tlow\tarea\t#low\nEND");
+ assert(!covers(pointOnly,0,2,2));assert(coversMarker(pointOnly,pointOnly.marks[0]));
+ auto wrongHeight=pointOnly.marks[0];wrongHeight.z=60;assert(!coversMarker(pointOnly,wrongHeight));
+ for(auto bad:{"SMAP1\nV\t0\t2\t2\t19\nEND","SMAP1\nV\t3\t2\t2\t19\nEND"}){bool rejected=false;try{parse(bad);}catch(...){rejected=true;}assert(rejected);}
  for(auto bad:{"", "SMAP1\n", "SMAP1\nO\t0\tnan\t0\t1\t1\nEND", "SMAP1\nEND\nP\t0"}){bool rejected=false;try{parse(bad);}catch(...){rejected=true;}assert(rejected);}
  assert(!s.allUnfinished);assert(parse("SMAP1\nM\tALL_UNFINISHED\nEND").allUnfinished);
+ assert(s.savedSolved==-1);assert(parse("SMAP1\nG\t833\nEND").savedSolved==833);assert(parse("SMAP1\nG\t0\nEND").savedSolved==0);
+ for(auto bad:{"SMAP1\nG\t-1\nEND","SMAP1\nG\t1.5\nEND","SMAP1\nG\t833\nG\t834\nEND"}){bool rejected=false;try{parse(bad);}catch(...){rejected=true;}assert(rejected);}
  for(auto bad:{"SMAP1\nM\tUNKNOWN\nEND","SMAP1\nM\tALL_UNFINISHED\nM\tALL_UNFINISHED\nEND","SMAP1\nM\tALL_UNFINISHED\nP\t0\t2\t2\t0\t1\t#1\t\tknown\tarea\t#1\nEND"}){bool rejected=false;try{parse(bad);}catch(...){rejected=true;}assert(rejected);}
  // Exercise the actual toggle/reset logic without opening a window or launching a worker.
  onlyUnsolved=false;data=s;query=L"hidden search";selected=0;unsigned oldGeneration=generation;
@@ -23,6 +29,7 @@ int main(int argc,char**argv){
  HDC screenDC=GetDC(nullptr),dc=CreateCompatibleDC(screenDC);HBITMAP bmp=CreateCompatibleBitmap(screenDC,1200,800);auto old=SelectObject(dc,bmp);
  data.tiles.push_back({0,13,5,1});paint(dc);POINT hidden=screen(13,5);assert(GetPixel(dc,hidden.x,hidden.y)==fog);
  POINT visible=screen(5,5);assert(GetPixel(dc,visible.x,visible.y)!=fog);
+ data=pointOnly;onlyUnsolved=false;paint(dc);auto low=screen(2,2);assert(GetPixel(dc,low.x,low.y)!=fog);assert(GetPixel(dc,low.x+20,low.y)==fog);data=s;
  // Unfinished marks keep a large, distinct silhouette over a background matching their fill colour.
  Mark pin{0,0,0,0,0,L"#pin",L"",L"pin",L"area",L"#pin"};
  fill(dc,{300,300,400,400},unfinished);drawMarker(dc,pin,{350,350},false);

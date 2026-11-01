@@ -175,7 +175,7 @@ namespace SinkingMapSetup {
    var scroll=new Panel {Dock=DockStyle.Fill,AutoScroll=true};Controls.Add(scroll);
    root.ColumnCount=1;root.RowCount=0;root.Dock=DockStyle.Top;root.AutoSize=true;root.AutoSizeMode=AutoSizeMode.GrowAndShrink;root.Padding=new Padding(24);root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100));scroll.Controls.Add(root);
    var header=Stack();
-   var eyebrow=TextLabel("离线安装  /  0.1.16");eyebrow.ForeColor=Blue;eyebrow.Font=new Font(Font,FontStyle.Bold);Add(header,eyebrow);
+   var eyebrow=TextLabel("离线安装  /  0.1.18");eyebrow.ForeColor=Blue;eyebrow.Font=new Font(Font,FontStyle.Bold);Add(header,eyebrow);
    var title=TextLabel("沉星之序地图");title.Font=new Font(Font.FontFamily,24F,FontStyle.Bold);title.Margin=new Padding(0,0,0,8);Add(header,title);
    Add(root,header);
    var card=Stack();card.Padding=new Padding(24);card.BackColor=Color.White;
@@ -236,3 +236,4 @@ namespace SinkingMapSetup {
   }
  }
 }
+

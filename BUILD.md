@@ -18,6 +18,12 @@ g++ -std=c++20 -O2 -static -o native-test.exe source/tests/native-test.cpp -lgdi
 
 Worker 原始来源的 MIT 许可保留在 SinkingMap/licenses 与 upstream 目录。修改并重新分发前请同时阅读 THIRD_PARTY.md。
 
+发行包根目录不再提供“测试验证记录.txt”和“先读我-安装与测试.txt”。安装说明放在 README 和 Release 页面，验证记录保留在开发记录中。准备好完整离线目录并更新完整性清单后，用以下命令打包；脚本会排除这两个旧文件并生成 ZIP 与 SHA256 文件：
+
+```powershell
+python tools/package_release.py <完整离线目录> <输出ZIP路径> --version 0.1.18
+```
+
 在完整解压目录中构建安装器（Windows .NET Framework 4.x）：
 
 ```powershell
@@ -39,3 +45,4 @@ g++ -std=c++20 -O2 -static -o ornament-test.exe source/tests/ornament-test.cpp -
 此测试覆盖 980×620、1440×900、1920×1080、2560×1440、3840×2160，
 逐像素确认顶部和侧栏两处花纹均可见，所有装饰差异仅限允许区域。
 原生绘图与图片解码使用系统 GDI+；存档解析使用随包 Node。
+

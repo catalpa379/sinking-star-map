@@ -24,7 +24,7 @@ namespace sm {
 struct Rect{int l;double x,y,w,h;};
 struct Tile{int l;double x,y,z;};
 struct Mark{int l;double x,y,z;int state;std::wstring id,key,name,area,countKey;};
-struct Snapshot{std::vector<Rect> open;std::vector<Tile> tiles;std::vector<Mark> marks;bool player=false;Tile hero{};std::wstring error;bool allUnfinished=false;};
+struct Snapshot{std::vector<Rect> open;std::vector<Tile> tiles;std::vector<Mark> marks;bool player=false;Tile hero{};std::wstring error;bool allUnfinished=false;int savedSolved=-1;std::vector<Tile> visiblePoints;};
 HWND wnd=nullptr,gameWnd=nullptr,searchBox=nullptr,profileBox=nullptr;
 HMODULE module=nullptr;
 WNDPROC gameProc=nullptr;
@@ -114,19 +114,23 @@ Snapshot parse(const std::string&s){
   if(line=="END"){end=true;break;}auto v=split(line);
   if(v[0]=="ERROR"){if(v.size()!=2)throw 1;out.error=wide(v[1]);continue;}
   if(v[0]=="M"&&v.size()==2&&v[1]=="ALL_UNFINISHED"&&!modeSeen){out.allUnfinished=true;modeSeen=true;}
+  else if(v[0]=="G"&&v.size()==2&&out.savedSolved<0){double n=number(v[1]);if(n<0||n!=std::floor(n))throw 1;out.savedSolved=(int)n;}
   else if(v[0]=="O"&&v.size()==6)out.open.push_back({(int)number(v[1]),number(v[2]),number(v[3]),number(v[4]),number(v[5])});
   else if(v[0]=="T"&&v.size()==5)out.tiles.push_back({(int)number(v[1]),number(v[2]),number(v[3]),number(v[4])});
+  else if(v[0]=="V"&&v.size()==5){double l=number(v[1]);if(l<0||l>2||l!=std::floor(l))throw 1;out.visiblePoints.push_back({(int)l,number(v[2]),number(v[3]),number(v[4])});}
   else if(v[0]=="P"&&v.size()==11)out.marks.push_back({(int)number(v[1]),number(v[2]),number(v[3]),number(v[4]),(int)number(v[5]),wide(v[6]),wide(v[7]),wide(v[8]),wide(v[9]),wide(v[10])});
   else if(v[0]=="H"&&v.size()==5){out.player=true;out.hero={(int)number(v[1]),number(v[2]),number(v[3]),number(v[4])};}
   else throw 1;
  }
  if(!end||std::getline(in,line))throw 1;
  if(!out.error.empty())return Snapshot{{},{},{},false,{},out.error};
- if(out.open.size()>10000||out.tiles.size()>200000||out.marks.size()>10000)throw 1;
+ if(out.open.size()>10000||out.tiles.size()>200000||out.marks.size()>10000||out.visiblePoints.size()>10000)throw 1;
+ for(const auto&p:out.visiblePoints){bool found=false;for(const auto&m:out.marks)if(m.l==p.l&&m.x==p.x&&m.y==p.y&&m.z==p.z){found=true;break;}if(!found)throw 1;}
  if(out.allUnfinished)for(const auto&m:out.marks)if(m.state!=0)throw 1;
  return out;
 }
 bool covers(const Snapshot&s,int l,double x,double y){for(auto&r:s.open)if(r.l==l&&x>=r.x&&x<r.x+r.w&&y>=r.y&&y<r.y+r.h)return true;return false;}
+bool coversMarker(const Snapshot&s,const Mark&m){if(covers(s,m.l,m.x,m.y))return true;for(const auto&p:s.visiblePoints)if(p.l==m.l&&p.x==m.x&&p.y==m.y&&p.z==m.z)return true;return false;}
 POINT screen(double x,double y){return {(LONG)std::lround((clientW-side)/2.+(x-cx)*zoom),(LONG)std::lround(top+(clientH-top)/2.-(y-cy)*zoom)};}
 bool match(const Mark&m){return m.l==layer&&((!showAllUnfinished&&!onlyUnsolved)||m.state==0)&&(query.empty()||m.name.find(query)!=m.name.npos||m.id.find(query)!=m.id.npos||m.key.find(query)!=m.key.npos||m.area.find(query)!=m.area.npos);}
 void reset(){

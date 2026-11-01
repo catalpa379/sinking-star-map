@@ -37,7 +37,7 @@ Snapshot readSnapshotProcess(const std::wstring&exe,std::wstring command,const s
   if(!result.error.empty())return result;
   if(code!=0)throw WorkerReadFailure{L"读取程序异常结束（退出码 "+std::to_wstring(code)+L"）"+cleared};
   if(result.allUnfinished!=requestedAll)throw WorkerReadFailure{L"读取结果的显示模式不匹配"+cleared};
-  for(const auto&m:result.marks)if(!covers(result,m.l,m.x,m.y)||m.state<0||m.state>1)throw WorkerReadFailure{L"读取结果未通过可见性校验"+cleared};
+  for(const auto&m:result.marks)if(!coversMarker(result,m)||m.state<0||m.state>1)throw WorkerReadFailure{L"读取结果未通过可见性校验"+cleared};
   if(result.player&&!covers(result,result.hero.l,result.hero.x,result.hero.y))throw WorkerReadFailure{L"存档位置未通过可见性校验"+cleared};
   return result;
  }catch(...){if(h.process.hProcess&&WaitForSingleObject(h.process.hProcess,0)==WAIT_TIMEOUT){TerminateProcess(h.process.hProcess,1);WaitForSingleObject(h.process.hProcess,1000);}throw;}

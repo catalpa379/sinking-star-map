@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "dxgi.dll",
-      "sha256": "E39E424349E9A2555D09250CFEC8E4FD1C4927B7CE844397BB293DF400D60DC1"
+      "sha256": "4E7D00B1CE19DF9A37EAEA58CC331BC7E70544D6A62C72F9676621BF3CEB9DE8"
     },
     {
       "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
@@ -58,7 +58,7 @@
     },
     {
       "path": "SinkingMap/worker/project.mjs",
-      "sha256": "9717EAEB21375600843BA6D46CE79E38E942B82E61A56A098A7333C7FF823452"
+      "sha256": "81CF452F0AB45F9BA905DD4C03188F24C38A3C368A00606F465814D117FBC1CD"
     },
     {
       "path": "SinkingMap/worker/upstream/data/schema.json",

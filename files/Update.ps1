@@ -36,7 +36,7 @@ $changes=@($new.files | Where-Object { $path=SafePath $target $_.path; !(Test-Pa
 $newPaths=@{}
 foreach($item in $new.files) { $newPaths[$item.path]=$true }
 $retired=@($old.files | Where-Object { !$newPaths.ContainsKey($_.path) })
-$backup=Join-Path $target ('SinkingMap\rollback-before-0.1.16-'+[DateTime]::Now.ToString('yyyyMMdd-HHmmss'))
+$backup=Join-Path $target ('SinkingMap\rollback-before-0.1.18-'+[DateTime]::Now.ToString('yyyyMMdd-HHmmss'))
 New-Item -ItemType Directory -Path $backup | Out-Null
 $applied=@()
 $retiredApplied=@()
@@ -73,5 +73,7 @@ foreach($item in $retired) {
   $parent=[IO.Path]::GetDirectoryName($parent)
  }
 }
-Write-Host '已更新为沉星之序地图0.1.16。已移除可达分析，精简离线包；地图仍按存档迷雾显示。'
+Write-Host '已更新为沉星之序地图0.1.18。已修复完成统计与局部迷雾的高度判断。'
 Write-Host ('旧版本备份：'+$backup)
+
+

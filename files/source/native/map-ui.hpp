@@ -51,8 +51,11 @@ void paint(HDC dc){
  Surface*base=terrainFor(layer);
  if(base){HDC src=CreateCompatibleDC(dc);auto old=SelectObject(src,base->bitmap);auto a=screen(-24.5,170.5),b=screen(165.5,-19.5);SetStretchBltMode(dc,HALFTONE);SetBrushOrgEx(dc,0,0,nullptr);StretchBlt(dc,a.x,a.y,b.x-a.x,b.y-a.y,src,0,0,base->w,base->h,SRCCOPY);SelectObject(src,old);DeleteDC(src);}
  else for(const auto&t:data.tiles)if(t.l==layer){auto a=screen(t.x-.5,t.y+.5),b=screen(t.x+.5,t.y-.5);int tint=std::clamp(65+(int)t.z,45,110);fill(dc,{a.x,a.y,b.x,b.y},RGB(tint-12,tint+10,tint+13));}
+ // Point visibility has its own height-aware grants; never punch holes in the raster mask.
+ HRGN markerBounds=CreateRectRgn(boundary[0].x,boundary[0].y,boundary[1].x,boundary[1].y);SelectClipRgn(dc,markerBounds);DeleteObject(markerBounds);
  // Completed pads first. Unfinished markers always stay on top at a fixed screen size, even when zoomed out.
- for(int pass=1;pass>=0;pass--)for(size_t i=0;i<data.marks.size();i++){const auto&m=data.marks[i];if(m.state!=pass||!match(m))continue;auto p=screen(m.x,m.y);if(p.x<0||p.x>clientW-side||p.y<top||p.y>clientH)continue;drawMarker(dc,m,p,(int)i==selected);}
+ for(int pass=1;pass>=0;pass--)for(size_t i=0;i<data.marks.size();i++){const auto&m=data.marks[i];if(m.state!=pass||!match(m)||!coversMarker(data,m))continue;auto p=screen(m.x,m.y);if(p.x<0||p.x>clientW-side||p.y<top||p.y>clientH)continue;drawMarker(dc,m,p,(int)i==selected);}
+ SelectClipRgn(dc,clip);
  if(data.player&&data.hero.l==layer){auto p=screen(data.hero.x,data.hero.y);HPEN pen=CreatePen(PS_SOLID,3,RGB(120,205,255));auto old=SelectObject(dc,pen);MoveToEx(dc,p.x-10,p.y,nullptr);LineTo(dc,p.x+11,p.y);MoveToEx(dc,p.x,p.y-10,nullptr);LineTo(dc,p.x,p.y+11);SelectObject(dc,old);DeleteObject(pen);}
  SelectClipRgn(dc,nullptr);DeleteObject(clip);
  fill(dc,{0,0,clientW,top},panel);fill(dc,{clientW-side,0,clientW,clientH},panel);
@@ -85,13 +88,16 @@ void paint(HDC dc){
  std::set<std::wstring> counted;int solved=0,unsolved=0;std::map<std::wstring,std::pair<int,int>> areas;
  for(const auto&m:data.marks){if(!counted.insert(m.countKey).second)continue;if(m.state)solved++;else unsolved++;auto&a=areas[m.area];if(m.state)a.first++;else a.second++;}
  bool compact=clientH<720;
- int y=top+(compact?88:104);rounded(dc,{sx-8,y,right+8,y+(compact?80:88)},well);
- label(dc,showAllUnfinished?L"全地图未完成 · 含未探索":L"存档已揭露 · 可确认的谜题",{sx+8,y+8,right-8,y+30},fg,14);
+ // Keep save-wide progress primary and map coverage secondary, using existing type/color tokens.
+ int y=top+(compact?88:104);int progressHeight=showAllUnfinished?88:116;
+ rounded(dc,{sx-8,y,right+8,y+progressHeight},well);
+ label(dc,showAllUnfinished?L"全地图未完成 · 含未探索":L"存档进度 · 已揭露地图",{sx+8,y+8,right-8,y+30},fg,14);
  if(busy||!data.error.empty())label(dc,busy?L"读取中…":L"状态无法确认",{sx+8,y+35,right-8,y+75},muted,20);
  else{
- label(dc,std::to_wstring(unsolved),{sx+8,y+30,sx+120,y+64},fg,28,true);label(dc,L"未完成",{sx+8,y+64,sx+120,y+82},progressPending,14);
- if(!showAllUnfinished){fill(dc,{sx+148,y+38,sx+149,y+74},edge);label(dc,std::to_wstring(solved),{sx+172,y+32,right-8,y+64},fg,24);label(dc,L"已完成",{sx+172,y+64,right-8,y+82},green,14);}}
- y+=compact?88:104;
+ label(dc,std::to_wstring(unsolved),{sx+8,y+30,sx+140,y+64},fg,28,true);label(dc,showAllUnfinished?L"未完成":L"地图内未完成",{sx+8,y+64,sx+140,y+82},progressPending,14);
+ if(!showAllUnfinished){fill(dc,{sx+148,y+38,sx+149,y+74},edge);label(dc,data.savedSolved>=0?std::to_wstring(data.savedSolved):L"—",{sx+172,y+32,right-8,y+64},fg,24);label(dc,L"存档总完成",{sx+172,y+64,right-8,y+82},green,14);
+ label(dc,L"当前地图内已完成："+std::to_wstring(solved),{sx+8,y+88,right-8,y+108},muted,13);}}
+ y+=progressHeight+(compact?8:16);
  if(selected>=0&&selected<(int)data.marks.size()&&match(data.marks[selected])){
   const auto&m=data.marks[selected];rounded(dc,{sx-8,y,right+8,y+100},card);fill(dc,{sx-8,y,sx-6,y+100},amber);
   label(dc,m.name,{sx+8,y+5,right-8,y+31},amber,18,true);
@@ -118,6 +124,6 @@ void paint(HDC dc){
  if(rows.empty())label(dc,busy?L"正在读取区域…":L"暂无可确认的区域",{sx,y,right,y+36},muted,13);
  label(dc,status,{sx,clientH-48,right,clientH-6},fg,14,false,DT_LEFT|DT_TOP|DT_WORDBREAK|DT_END_ELLIPSIS);
  fill(dc,{0,clientH-32,clientW-side,clientH},panel);
- label(dc,showAllUnfinished?(clientW-side<800?L"剧透已开启":L"剧透已开启，关闭开关恢复迷雾。"):(clientW-side<800?L"未揭露区域保留迷雾":L"未揭露区域保留迷雾，不显示全游戏总数。"),{18,clientH-32,clientW-side-320,clientH-4},fg,14);
+ label(dc,showAllUnfinished?(clientW-side<800?L"剧透已开启":L"剧透已开启，关闭开关恢复迷雾。"):L"未揭露区域保留迷雾",{18,clientH-32,clientW-side-320,clientH-4},fg,14);
  label(dc,L"! 未完成   ● 已完成   + 存档位置",{clientW-side-310,clientH-32,clientW-side-16,clientH-4},muted,14,false,DT_RIGHT|DT_VCENTER|DT_SINGLELINE|DT_END_ELLIPSIS);
 }
