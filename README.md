@@ -1,7 +1,7 @@
 <h1 align="center">沉星之序地图</h1>
 <p align="center">读取本地存档，查看未完成的谜题，方便后期查漏补缺。</p>
 <p align="center">
-  <img alt="版本" src="https://img.shields.io/badge/version-0.1.18%20%E6%B5%8B%E8%AF%95%E7%89%88-c5a568">
+  <img alt="版本" src="https://img.shields.io/badge/version-0.1.19%20%E6%B5%8B%E8%AF%95%E7%89%88-c5a568">
   <img alt="平台" src="https://img.shields.io/badge/platform-Windows%20x64-4476b5">
   <a href="LICENSE"><img alt="代码许可 MIT" src="https://img.shields.io/badge/license%20%28code%29-MIT-739b82"></a>
 </p>
@@ -10,11 +10,11 @@
 
 **默认保留探索迷雾，也可主动开启剧透模式，查看全地图未完成谜题。**
 
-**当前版本：0.1.18 测试版。** 支持 Steam Build **26006400 / 26249670** 的匹配版本。详见 [发布说明](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.18)。
+**当前版本：0.1.19 测试版。** 支持 Steam Build **26006400 / 26249670** 的匹配版本。详见 [发布说明](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.19)。
 
 ## 下载与安装
 
-**[下载 0.1.18 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.18/Sinking-Star-Map-0.1.18-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.18) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.18/Sinking-Star-Map-0.1.18-SHA256.txt)
+**[下载 0.1.19 完整离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.19/Sinking-Star-Map-0.1.19-Offline.zip)** · [版本发布页](https://github.com/catalpa379/sinking-star-map/releases/tag/v0.1.19) · [SHA256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.19/Sinking-Star-Map-0.1.19-SHA256.txt)
 
 安装步骤：
 
@@ -22,6 +22,10 @@
 2. 正常退出游戏，运行“安装与卸载.exe”。
 3. 核对Steam游戏目录，点击“安装 / 更新”。
 4. 启动游戏，用设置的按键打开地图，选择与游戏一致的档案。
+
+已有地图版本可直接覆盖安装，无需先卸载。安装器会记录当前安装文件，供后续升级、降级、重装及卸载使用。
+
+与占用 `dxgi.dll` 的其他模组共存时，先安装对方模组，再安装本地图；安装器会保留并串联加载原有 DLL，卸载地图时恢复。
 
 初始打开/关闭按键为 **F8**，刷新为 **F5**，均可在安装器或地图右上角“按键设置”中修改。卸载使用对应版本安装器，未知文件、存档、按键设置与旧版备份保留。
 

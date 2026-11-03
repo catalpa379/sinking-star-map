@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "dxgi.dll",
-      "sha256": "4E7D00B1CE19DF9A37EAEA58CC331BC7E70544D6A62C72F9676621BF3CEB9DE8"
+      "sha256": "07005503AB7AE2D5D9DEF0F37FA5D4A2FEBB72F8E7D1168E6ECE1D77EB35BA43"
     },
     {
       "path": "SinkingMap/licenses/COPYING.MinGW-w64-runtime.txt",
@@ -115,6 +115,10 @@
     {
       "path": "SinkingMap/worker/upstream/src/types.ts",
       "sha256": "B8A8B7F83E8C77E53A58F62F93D5230018934329605ACB747A51B5C5DF9A489A"
+    },
+    {
+      "path": "SinkingMap-map.dll",
+      "sha256": "967F81D2333064C8A676A128C3B2C0566ED30BAA18FADF9A130C16A26715DA1F"
     }
   ]
 }

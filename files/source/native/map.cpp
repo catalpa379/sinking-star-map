@@ -318,8 +318,8 @@ int WINAPI wWinMain(HINSTANCE h,HINSTANCE,LPWSTR,int){sm::module=h;sm::run(true)
 static HMODULE systemDxgi=nullptr;
 static INIT_ONCE init=INIT_ONCE_STATIC_INIT;
 static BOOL CALLBACK initialize(PINIT_ONCE,PVOID,PVOID*){
- wchar_t path[MAX_PATH];GetSystemDirectoryW(path,MAX_PATH);std::wstring dll=std::wstring(path)+L"\\dxgi.dll";systemDxgi=LoadLibraryW(dll.c_str());
- wchar_t host[32768];GetModuleFileNameW(nullptr,host,32768);std::wstring name=host;auto p=name.find_last_of(L"\\/");name=name.substr(p+1);
+ wchar_t path[MAX_PATH];GetSystemDirectoryW(path,MAX_PATH);systemDxgi=LoadLibraryW((std::wstring(path)+L"\\dxgi.dll").c_str());
+ wchar_t host[32768];GetModuleFileNameW(nullptr,host,32768);std::wstring name=host;name=name.substr(name.find_last_of(L"\\/")+1);
  if(_wcsicmp(name.c_str(),L"sinking_star.exe")==0)std::thread([]{sm::run(false);}).detach();return TRUE;
 }
 static FARPROC real(const char*name){InitOnceExecuteOnce(&init,initialize,nullptr,nullptr);return systemDxgi?GetProcAddress(systemDxgi,name):nullptr;}
@@ -330,4 +330,5 @@ extern "C" __declspec(dllexport) HRESULT WINAPI DXGIGetDebugInterface1(UINT f,RE
 extern "C" __declspec(dllexport) HRESULT WINAPI DXGIDeclareAdapterRemovalSupport(){using Fn=HRESULT(WINAPI*)();auto fn=(Fn)real("DXGIDeclareAdapterRemovalSupport");return fn?fn():E_FAIL;}
 BOOL WINAPI DllMain(HINSTANCE h,DWORD why,LPVOID){if(why==DLL_PROCESS_ATTACH){sm::module=h;DisableThreadLibraryCalls(h);}return TRUE;}
 #endif
+
 

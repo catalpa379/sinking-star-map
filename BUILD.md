@@ -5,7 +5,8 @@
 在 files 目录下，使用 x64 MinGW-w64 g++（验证版本15.1.0）构建 DLL：
 
 ```powershell
-g++ -std=c++20 -O2 -static -shared -o dxgi.dll source/native/map.cpp -lgdi32 -luser32 -lshell32 -lgdiplus -lole32 -luuid
+g++ -std=c++20 -O2 -static -shared -o SinkingMap-map.dll source/native/map.cpp -lgdi32 -luser32 -lshell32 -lgdiplus -lole32 -luuid
+g++ -std=c++20 -O2 -static -shared -o dxgi.dll source/native/dxgi-bridge.cpp -lole32 -luuid
 ```
 
 在独立目录运行原生离屏测试：
@@ -46,3 +47,5 @@ g++ -std=c++20 -O2 -static -o ornament-test.exe source/tests/ornament-test.cpp -
 逐像素确认顶部和侧栏两处花纹均可见，所有装饰差异仅限允许区域。
 原生绘图与图片解码使用系统 GDI+；存档解析使用随包 Node。
 
+
+0.1.19 安装流程使用 Manage-Install.ps1；安装记录写入 SinkingMap/installed.json。兼容桥 dxgi.dll 与地图核心 SinkingMap-map.dll 分开，每个安装包只安装自己的载荷，用已安装目录内的 installed.json 识别和替换不同版本，不保留完整历史版本清单。原有第三方 DXGI 保存到游戏根目录的独立 DLL，并由 chain-dxgi.txt 指向；卸载时恢复。

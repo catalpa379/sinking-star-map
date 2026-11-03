@@ -16,7 +16,6 @@ using Microsoft.Win32;
 namespace SinkingMapSetup {
  public class Item { public string path {get;set;} public string sha256 {get;set;} }
  public class Manifest { public List<Item> files {get;set;} }
- public class PriorVersions { public List<Manifest> versions {get;set;} }
  public class TerrainFile { public string name {get;set;} public string sha256 {get;set;} }
  public class Terrain { public string revision {get;set;} public List<TerrainFile> files {get;set;} }
 
@@ -88,19 +87,15 @@ namespace SinkingMapSetup {
   }
   void PowerShell(string script,string game,string terrain) {
    var exe=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System),"WindowsPowerShell","v1.0","powershell.exe");
-   var args="-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "+Quote(Path.Combine(Files,script))+" -GamePath "+Quote(game);
+   var args="-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "+Quote(Path.Combine(Base,"files","Manage-Install.ps1"))+" -Action "+(script=="Uninstall.ps1"?"Uninstall":"Install")+" -PackagePath "+Quote(Files)+" -GamePath "+Quote(game);
    if(terrain!=null)args+=" -TerrainPath "+Quote(terrain);
    Execute(exe,args,false);
   }
   bool IsThisVersion(string game,bool allowOldRuntime) {
-   var m=Json<Manifest>(Path.Combine(Files,"SHA256.json"));
+   var receipt=Path.Combine(game,"SinkingMap","installed.json");var m=Json<Manifest>(File.Exists(receipt)?receipt:Path.Combine(Files,"SHA256.json"));
    foreach(var f in m.files) {var p=Within(game,f.path);if(!File.Exists(p))return false;var actual=Hash(p);
     if(!Same(actual,f.sha256)&&!(allowOldRuntime&&f.path=="SinkingMap/runtime/node.exe"&&Same(actual,OldNodeHash)))return false;}
    return true;
-  }
-  bool IsSupportedPrevious(string game) {
-   var supported=Json<PriorVersions>(Path.Combine(Files,"Supported-Previous.json"));
-   return supported.versions!=null&&supported.versions.Any(v=>v.files!=null&&v.files.Count>=10&&v.files.All(f=>{var p=Within(game,f.path);return File.Exists(p)&&Same(Hash(p),f.sha256);}));
   }
   List<Item> LegacyImages(string game) {
    var result=new List<Item>();var folder=Path.Combine(game,"SinkingMap","terrain");
@@ -112,12 +107,7 @@ namespace SinkingMapSetup {
   }
   public void Install(string game,string suppliedCache) {
    Cancelled=false;Progress(2,"1 / 4 · 检查安装包与游戏版本");CanCancel(true);game=Path.GetFullPath(game).TrimEnd('\\');VerifyPackage();Log("正在检查游戏版本…");CheckGame(game);
-   var proxy=Path.Combine(game,"dxgi.dll");var manifest=Json<Manifest>(Path.Combine(Files,"SHA256.json"));var wanted=manifest.files.First(f=>f.path=="dxgi.dll").sha256;
-   var legacyImages=LegacyImages(game);string mode="fresh";
-   if(File.Exists(proxy)) {
-    if(Same(Hash(proxy),wanted)) {if(IsThisVersion(game,true))mode="same";else if(IsSupportedPrevious(game))mode="update";else throw new Exception("已安装的同名模组文件被修改，停止覆盖。请先核实原模组。");}
-    else {var old=Json<PriorVersions>(Path.Combine(Files,"Supported-Previous.json"));if(old.versions==null||!old.versions.Any(v=>v.files.Any(f=>f.path=="dxgi.dll"&&Same(Hash(proxy),f.sha256))))throw new Exception("已有其他版本或其他模组的 dxgi.dll，请先确认并卸载，安装器不会覆盖。");mode="update";}
-   } else if(Directory.Exists(Path.Combine(game,"SinkingMap")))throw new Exception("发现已有 SinkingMap 目录，请先核实残留文件或使用卸载功能。");
+   var legacyImages=LegacyImages(game);
    EnsureRuntimes();
    Progress(45,"3 / 4 · 校验内置地图素材");
    string cache=String.IsNullOrEmpty(suppliedCache)?Path.Combine(Files,"SinkingMap","terrain"):suppliedCache;
@@ -125,20 +115,12 @@ namespace SinkingMapSetup {
    if(!ValidTerrain(cache))throw new Exception("离线地图缺失或损坏。请完整解压安装包；安装器不会联网补下载。");
    Log("资源校验完成，无需下载。");
    CheckCancel();CanCancel(false);Progress(70,"4 / 4 · 安装并验证文件");CheckGame(game);Log("正在安装已校验的模组文件…");
-   if(mode=="fresh")PowerShell("Install.ps1",game,cache);
-   else {
-    if(mode=="update")PowerShell("Update.ps1",game,null);
-    if(mode=="same") {
-     var target=Path.Combine(game,"SinkingMap","runtime","node.exe");var source=Path.Combine(Files,"SinkingMap","runtime","node.exe");
-     if(!Same(Hash(target),Hash(source))) {var temp=target+".setup-"+Guid.NewGuid().ToString("N");File.Copy(source,temp);File.Replace(temp,target,target+".before-tester-setup-"+DateTime.Now.ToString("yyyyMMddHHmmss"));}
-    }
-    if(!Same(Path.GetFullPath(cache).TrimEnd('\\'),Path.GetFullPath(existing).TrimEnd('\\'))) {Directory.CreateDirectory(existing);foreach(var name in Images.Concat(new[]{"provenance.json"}))File.Copy(Path.Combine(cache,name),Path.Combine(existing,name),true);}
-   }
+   PowerShell("Install.ps1",game,cache);
    if(!IsThisVersion(game,false)||!ValidTerrain(existing))throw new Exception("安装后校验失败，请保留本窗口日志并反馈。");
    foreach(var f in legacyImages){var p=Within(existing,f.path);if(File.Exists(p)&&Same(Hash(p),f.sha256))File.Delete(p);}
    Progress(100,"安装完成");Log("安装完成。请通过 Steam 启动游戏，按键可在“按键设置”中修改。");Log("默认保留迷雾；“显示全部未完成（剧透）”需要主动开启。");
   }
-  public void Uninstall(string game) {Cancelled=false;Progress(10,"正在检查已安装文件");VerifyPackage();CheckGame(game);CanCancel(false);Progress(60,"正在移除可核实的模组文件");PowerShell("Uninstall.ps1",game,null);Progress(100,"卸载完成");Log("卸载完成。存档和游戏原文件未改动；已修改文件和旧版备份会保留。");}
+  public void Uninstall(string game) {Cancelled=false;Progress(10,"正在检查已安装文件");if(!File.Exists(Path.Combine(game,"sinking_star.exe")))throw new Exception("请选择游戏目录。");if(Process.GetProcessesByName("sinking_star").Length!=0)throw new Exception("请先退出游戏。");CanCancel(false);Progress(60,"正在移除可核实的模组文件");PowerShell("Uninstall.ps1",game,null);Progress(100,"卸载完成");Log("卸载完成，原有 DXGI 模组已恢复，存档保持不变。");}
   public static string FindGame() {
    var roots=new List<string>();
    foreach(var key in new[]{Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam"),Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Valve\Steam")})if(key!=null){using(key){var path=(key.GetValue("SteamPath")??key.GetValue("InstallPath"))as string;if(!String.IsNullOrEmpty(path))roots.Add(path);}}
@@ -175,7 +157,7 @@ namespace SinkingMapSetup {
    var scroll=new Panel {Dock=DockStyle.Fill,AutoScroll=true};Controls.Add(scroll);
    root.ColumnCount=1;root.RowCount=0;root.Dock=DockStyle.Top;root.AutoSize=true;root.AutoSizeMode=AutoSizeMode.GrowAndShrink;root.Padding=new Padding(24);root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100));scroll.Controls.Add(root);
    var header=Stack();
-   var eyebrow=TextLabel("离线安装  /  0.1.18");eyebrow.ForeColor=Blue;eyebrow.Font=new Font(Font,FontStyle.Bold);Add(header,eyebrow);
+   var eyebrow=TextLabel("离线安装  /  0.1.19");eyebrow.ForeColor=Blue;eyebrow.Font=new Font(Font,FontStyle.Bold);Add(header,eyebrow);
    var title=TextLabel("沉星之序地图");title.Font=new Font(Font.FontFamily,24F,FontStyle.Bold);title.Margin=new Padding(0,0,0,8);Add(header,title);
    Add(root,header);
    var card=Stack();card.Padding=new Padding(24);card.BackColor=Color.White;
@@ -200,7 +182,7 @@ namespace SinkingMapSetup {
    root.SizeChanged+=delegate{WrapText(root);};
    browse.Click+=delegate{using(var dlg=new OpenFileDialog {Title="选择游戏主程序",Filter="游戏主程序|sinking_star.exe",CheckFileExists=true}){if(Directory.Exists(path.Text))dlg.InitialDirectory=path.Text;if(dlg.ShowDialog(this)==DialogResult.OK)path.Text=Path.GetDirectoryName(dlg.FileName);}};
    install.Click+=async delegate{await Work(false);};
-   uninstall.Click+=async delegate{if(MessageBox.Show(this,"卸载本版本模组？游戏存档会保留。","卸载模组",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)await Work(true);};
+   uninstall.Click+=async delegate{if(MessageBox.Show(this,"卸载当前已安装的地图模组？游戏存档会保留。","卸载模组",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)await Work(true);};
    cancel.Click+=delegate{cancel.Enabled=false;setup.Cancel();};
    setup.Log=s=>Post(()=>{log.AppendText(s+Environment.NewLine);});
    setup.Progress=(value,text)=>Post(()=>{progress.Value=Math.Max(0,Math.Min(100,value));state.Text=text;detail.Text=value==100?"可以关闭安装器。地图默认保留迷雾。":"正在处理本地文件，请稍候…";});
