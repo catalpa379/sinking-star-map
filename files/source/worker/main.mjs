@@ -7,8 +7,7 @@ import {parseStatus} from './upstream/src/status-file.ts';
 import {parseHistory} from './upstream/src/history-file.ts';
 import {createBlobDecoder} from './upstream/src/blob.ts';
 import {project,protocol} from './project.mjs';
-export const compatible={exe:'0ae10a513dae25286fe93d0db4fa8a2df9a473bc07e1734e12bc1ad30166db1c',package:'408aba3676925faea0c823f8c231e30844feffe9c32ae42644d273ef31863589'};
-export const compatibleCurrent={exe:'d802098b7cb85eadfc733b88d1554042fad950c572e916febea3f669a474a549',package:'d747e5d9b8f540c9c6b90e8e987bd74a8c7f8f2f0672fce189403128f1f3117c'};
+import compatibility from './compatibility.json' with {type:'json'};
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const TYPES=new Set(['Settings','Fog_Of_War','Group','Level_Entry','Area_Pin','Marker','Camera_Marker','Wall_Set']);
 function checkedRead(path,max){const s=statSync(path);if(!s.isFile()||s.size>max)throw Error('文件大小不受支持');return readFileSync(path);}
@@ -74,10 +73,10 @@ export function loadSnapshot(game,campaign,options={}){return readWithSaveRetry(
 function loadSnapshotOnce(game,campaign,options={}){
  game=resolve(game);campaign=resolve(campaign);
  const exeHash=hash(checkedRead(join(game,'sinking_star.exe'),32*1024*1024));
- const version=exeHash===compatible.exe?'26006400':exeHash===compatibleCurrent.exe?'26249670':null;
- if(!version)throw Error('游戏版本未经验证，已隐藏地图');
+ const build=compatibility.builds.find(x=>x.exe===exeHash);
+ if(!build)throw Error('游戏版本未经验证，已隐藏地图');
  const packagePath=join(game,'data','levels.package');
- if(hash(checkedRead(packagePath,512*1024*1024))!==(version==='26006400'?compatible.package:compatibleCurrent.package))throw Error('地图资源版本未经验证');
+ if(hash(checkedRead(packagePath,512*1024*1024))!==build.levels)throw Error('地图资源版本未经验证');
  const sp=join(campaign,'Status.sokoban_status'),hp=join(campaign,'overworld.history');
  const sb=checkedSaveRead(sp,8*1024*1024),hb=checkedSaveRead(hp,128*1024*1024);
  const {status,history}=parsePair(sb,hb);

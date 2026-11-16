@@ -28,7 +28,7 @@ python tools/package_release.py <完整离线目录> <输出ZIP路径> --version
 在完整解压目录中构建安装器（Windows .NET Framework 4.x）：
 
 ```powershell
-& "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /platform:x64 /optimize+ /codepage:65001 /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Web.Extensions.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll /win32manifest:files\installer\app.manifest /out:安装与卸载.exe files\installer\Installer.cs files\installer\KeySettings.cs
+& "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /platform:x64 /optimize+ /codepage:65001 /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Web.Extensions.dll /win32manifest:files\installer\app.manifest /out:安装与卸载.exe files\installer\Installer.cs files\installer\KeySettings.cs
 ```
 
 安装器的 `--verify`、`--prepare-runtime`、`--install-to`、`--uninstall-from` 参数供隔离测试使用。测试卸载请使用隔离目录，并先退出游戏。
@@ -49,3 +49,5 @@ g++ -std=c++20 -O2 -static -o ornament-test.exe source/tests/ornament-test.cpp -
 
 
 0.1.19 安装流程使用 Manage-Install.ps1；安装记录写入 SinkingMap/installed.json。兼容桥 dxgi.dll 与地图核心 SinkingMap-map.dll 分开，每个安装包只安装自己的载荷，用已安装目录内的 installed.json 识别和替换不同版本，不保留完整历史版本清单。原有第三方 DXGI 保存到游戏根目录的独立 DLL，并由 chain-dxgi.txt 指向；卸载时恢复。
+
+0.1.20 起，游戏构建号、可执行文件和关卡包的 SHA-256 以及模组版本统一写在 `files/source/worker/compatibility.json`。打包时将它与 worker 源码一起同步至 `files/SinkingMap/worker/`，并将它纳入安装载荷和发行包的两份哈希清单。改动的 PowerShell 安装脚本须以带 BOM 的 UTF-8 打包，以适配 Windows PowerShell 5.1。

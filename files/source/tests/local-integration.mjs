@@ -18,7 +18,7 @@ copyFileSync(join(a,files[0]),join(b,files[0]));
 const fresh=Buffer.alloc(118);fresh.writeUInt32LE(73,0);fresh.writeUInt32LE(7,4);fresh.writeBigInt64LE(25n,8);writeFileSync(join(b,files[1]),fresh);
 const advanced=loadSnapshot(game,a);assert(advanced.open.length>0);
 const allUnfinished=loadSnapshot(game,a,{showAllUnfinished:true});assert(allUnfinished.allUnfinished);assert(allUnfinished.markers.every(m=>m.state===0));assert.equal(protocol(loadSnapshot(game,a)),protocol(advanced));
-const empty=loadSnapshot(game,b);assert.deepEqual(empty,{open:[],markers:[],terrain:[],player:null});
+const empty=loadSnapshot(game,b);assert.deepEqual(empty,{open:[],markers:[],terrain:[],player:null,savedSolved:advanced.savedSolved});
 assert.equal(protocol(loadSnapshot(game,a)),protocol(advanced));
 writeFileSync(join(b,files[0]),readFileSync(join(b,files[0])).subarray(0,100));assert.throws(()=>loadSnapshot(game,b));
 assert.throws(()=>loadSnapshot(game,b,{showAllUnfinished:true}));

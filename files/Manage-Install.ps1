@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$GamePath,[ValidateSet('Install','Uninstall')][string]$Action='Install',[string]$PackagePath=$PSScriptRoot,[string]$TerrainPath='')
+﻿param([Parameter(Mandatory=$true)][string]$GamePath,[ValidateSet('Install','Uninstall')][string]$Action='Install',[string]$PackagePath=$PSScriptRoot,[string]$TerrainPath='')
 [Console]::OutputEncoding=New-Object System.Text.UTF8Encoding
 $ErrorActionPreference='Stop'
 $target=[IO.Path]::GetFullPath($GamePath).TrimEnd('\')
@@ -12,6 +12,12 @@ function Inside([string]$base,[string]$relative){
 }
 function Hash([string]$p){if(Test-Path -LiteralPath $p -PathType Leaf){return (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash};return ''}
 function SaveJson($value,[string]$p){$value|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $p -Encoding UTF8}
+$mutex=New-Object Threading.Mutex($false,'Global\SinkingStarMapSetup')
+$locked=$false
+try{
+try{$locked=$mutex.WaitOne(0)}catch [Threading.AbandonedMutexException]{$locked=$true}
+if(!$locked){throw '另一个地图安装或卸载操作正在运行，请稍后重试。'}
+if(Get-Process -Name sinking_star -ErrorAction SilentlyContinue){throw '请先退出游戏。'}
 $folder=Join-Path $target 'SinkingMap';$proxy=Join-Path $target 'dxgi.dll';$receiptPath=Join-Path $folder 'installed.json'
 $new=Get-Content -LiteralPath (Join-Path $package 'SHA256.json') -Raw|ConvertFrom-Json
 $sourceFiles=@{};foreach($item in $new.files){$sourceFiles[$item.path]=Inside $package $item.path}
@@ -23,12 +29,17 @@ $legacy=Join-Path $PSScriptRoot 'Legacy-Dxgi.json'
 if(Test-Path -LiteralPath $legacy){$ownHashes+=@((Get-Content -LiteralPath $legacy -Raw|ConvertFrom-Json).hashes)}
 $current=Hash $proxy;$ours=$current -and $current -in $ownHashes
 $chain=$null;if($receipt){$chain=$receipt.chain}
+if(!$receipt -and $ours -and (Test-Path -LiteralPath $folder -PathType Container)){
+ $legacyName='dxgi.sinkingmap-original.dll'
+ $legacyHash=Hash (Join-Path $target $legacyName)
+ if($legacyHash -and $legacyHash -notin $ownHashes){$chain=[pscustomobject]@{path=$legacyName;sha256=$legacyHash}}
+}
 if($Action -eq 'Uninstall'){
  if($ours){Remove-Item -LiteralPath $proxy -Force}
  $core=Join-Path $target 'SinkingMap-map.dll';if($receipt -and (Test-Path -LiteralPath $core)){Remove-Item -LiteralPath $core -Force}
  if($chain -and !(Test-Path -LiteralPath $proxy)){
   $original=Inside $target $chain.path
-  if(Test-Path -LiteralPath $original){Move-Item -LiteralPath $original -Destination $proxy -Force;Write-Host '已恢复原有 DXGI 模组。'}
+  if((Hash $original) -eq $chain.sha256){Move-Item -LiteralPath $original -Destination $proxy -Force;Write-Host '已恢复原有 DXGI 模组。'}
  }
  $paths=@($known|ForEach-Object {$_.files}|Where-Object {$_.path.StartsWith('SinkingMap/')}|ForEach-Object {$_.path}|Select-Object -Unique)
  foreach($relative in $paths){$p=Inside $target $relative;if(Test-Path -LiteralPath $p -PathType Leaf){Remove-Item -LiteralPath $p -Force}}
@@ -38,6 +49,11 @@ if($Action -eq 'Uninstall'){
 }
 # Each package installs its own payload. The installed receipt describes any newer or older version.
 foreach($item in $new.files){if((Hash $sourceFiles[$item.path]) -ne $item.sha256){throw ('安装包文件损坏：'+$item.path)}}
+$versionPath=Join-Path $package 'SinkingMap/worker/compatibility.json'
+$version=$null
+if(Test-Path -LiteralPath $versionPath -PathType Leaf){
+ $version=(Get-Content -LiteralPath $versionPath -Raw|ConvertFrom-Json).modVersion
+}
 $backup=Join-Path $target ('SinkingMap-install-backup-'+[Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $backup|Out-Null
 $changed=New-Object System.Collections.Generic.List[string]
@@ -60,7 +76,7 @@ try{
  foreach($item in $new.files){$p=Inside $target $item.path;New-Item -ItemType Directory -Force -Path ([IO.Path]::GetDirectoryName($p))|Out-Null;Copy-Item -LiteralPath $sourceFiles[$item.path] -Destination $p -Force}
  foreach($relative in $retired){$p=Inside $target $relative;if(Test-Path -LiteralPath $p -PathType Leaf){Remove-Item -LiteralPath $p -Force}}
  if($chain){[IO.File]::WriteAllText((Join-Path $folder 'chain-dxgi.txt'),$chain.path,(New-Object Text.UTF8Encoding($false)))}else{$p=Join-Path $folder 'chain-dxgi.txt';if(Test-Path -LiteralPath $p){Remove-Item -LiteralPath $p -Force}}
- SaveJson ([pscustomobject]@{format=1;files=$new.files;chain=$chain}) $receiptPath
+ SaveJson ([pscustomobject]@{format=1;version=$version;files=$new.files;chain=$chain}) $receiptPath
  foreach($item in $new.files){if((Hash (Inside $target $item.path)) -ne $item.sha256){throw '安装后的文件不完整。'}}
 }catch{
  foreach($relative in $changed){$p=Inside $target $relative;$saved=Inside $backup $relative;if(Test-Path -LiteralPath $saved){Copy-Item -LiteralPath $saved -Destination $p -Force}else{if(Test-Path -LiteralPath $p -PathType Leaf){Remove-Item -LiteralPath $p -Force}}}
@@ -68,3 +84,7 @@ try{
  throw
 }finally{if(Test-Path -LiteralPath $backup){Remove-Item -LiteralPath $backup -Recurse -Force}}
 Write-Host '安装完成，已有地图版本已自动替换。'
+}finally{
+ if($locked){$mutex.ReleaseMutex()}
+ $mutex.Dispose()
+}
