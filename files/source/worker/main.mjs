@@ -8,11 +8,15 @@ import {parseHistory} from './upstream/src/history-file.ts';
 import {createBlobDecoder} from './upstream/src/blob.ts';
 import {project,protocol} from './project.mjs';
 import compatibility from './compatibility.json' with {type:'json'};
+const {formats}=compatibility;
+class CompatibilityError extends Error {
+ constructor(code,message){super(message);this.code=code;}
+}
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const TYPES=new Set(['Settings','Fog_Of_War','Group','Level_Entry','Area_Pin','Marker','Camera_Marker','Wall_Set']);
 function checkedRead(path,max){const s=statSync(path);if(!s.isFile()||s.size>max)throw Error('文件大小不受支持');return readFileSync(path);}
 export function parsePair(statusBytes,historyBytes){
- if(statusBytes.readUInt32LE(0)!==33||historyBytes.readUInt32LE(0)!==73)throw Error('仅验证 Status 33 / History 73');
+ if(statusBytes.readUInt32LE(0)!==formats.status||historyBytes.readUInt32LE(0)!==formats.history)throw new CompatibilityError('SAVE_FORMAT','存档格式尚未验证');
  const status=parseStatus(statusBytes),history=parseHistory(historyBytes);
  if(history.error)throw Error('历史文件不完整');
  if(new Set(status.levels.map(x=>x.name)).size!==status.levels.length)throw Error('状态表存在重复编号');
@@ -25,7 +29,7 @@ export function applyHistory(entities,history,schema){
   if(a.type===3)continue;
   const type=history.types[a.etype]?.name;if(!TYPES.has(type))continue;
   const d=decode(a.blob,type,a.type===1);
-  if(d.baseVersion!==25||d.typeVersion!==history.types[a.etype].version)throw Error('历史实体版本不匹配');
+  if(d.baseVersion!==formats.baseEntity||d.typeVersion!==history.types[a.etype].version)throw new CompatibilityError('HISTORY_ENTITY','历史实体版本不匹配');
   if(a.type===2){const old=life.get(a.pid);if(!old||old.key<a.key)life.set(a.pid,{key:a.key,destroyed:a.destroyed});}
   for(const field of d.fields){
    const name=(field.derived?'':'base.')+field.f.n,key=a.pid+':'+name,old=latest.get(key);
@@ -65,8 +69,7 @@ export function readWithSaveRetry(read,pause=()=>Atomics.wait(new Int32Array(new
 }
 export function publicReadError(error){
  if(error?.code==='SAVE_BUSY')return '存档正在保存或暂时被占用；地图已清空，请稍后刷新重试。';
- const version=['游戏版本未经验证，已隐藏地图','地图资源版本未经验证','仅验证 Status 33 / History 73','历史实体版本不匹配','基础实体版本不受支持','存档世界版本与游戏不一致，需先由游戏正常加载','实体结构发生变化'];
- if(version.includes(error?.message))return '游戏或存档格式尚不兼容；地图已清空，请检查游戏版本。';
+ if(error instanceof CompatibilityError)return `地图已清空：${error.message}（${error.code}）。`;
  return '存档读取或校验失败；地图已清空，请刷新重试。';
 }
 export function loadSnapshot(game,campaign,options={}){return readWithSaveRetry(()=>loadSnapshotOnce(game,campaign,options));}
@@ -74,18 +77,18 @@ function loadSnapshotOnce(game,campaign,options={}){
  game=resolve(game);campaign=resolve(campaign);
  const exeHash=hash(checkedRead(join(game,'sinking_star.exe'),32*1024*1024));
  const build=compatibility.builds.find(x=>x.exe===exeHash);
- if(!build)throw Error('游戏版本未经验证，已隐藏地图');
+ if(!build)throw new CompatibilityError('GAME_BUILD','游戏版本未经验证，已隐藏地图');
  const packagePath=join(game,'data','levels.package');
- if(hash(checkedRead(packagePath,512*1024*1024))!==build.levels)throw Error('地图资源版本未经验证');
+ if(hash(checkedRead(packagePath,512*1024*1024))!==build.levels)throw new CompatibilityError('LEVEL_PACKAGE','地图资源版本未经验证');
  const sp=join(campaign,'Status.sokoban_status'),hp=join(campaign,'overworld.history');
  const sb=checkedSaveRead(sp,8*1024*1024),hb=checkedSaveRead(hp,128*1024*1024);
  const {status,history}=parsePair(sb,hb);
  const pkg=new Package(packagePath);let entities,schema,header;
  try{header=pkg.rawEntities('overworld').header;entities=pkg.levelWithDefaults('overworld',TYPES);schema=pkg.schema;}finally{pkg.close();}
- if(header.base!==25||hb.readBigInt64LE(8)!==25n)throw Error('基础实体版本不受支持');
+ if(header.base!==formats.baseEntity||hb.readBigInt64LE(8)!==BigInt(formats.baseEntity))throw new CompatibilityError('BASE_ENTITY','基础实体版本不受支持');
  const settings=entities.find(x=>x.type==='Settings').fields;
- if(settings.level_data_version!==hb.readUInt32LE(4))throw Error('存档世界版本与游戏不一致，需先由游戏正常加载');
- for(const t of history.types)if(TYPES.has(t.name)&&header.types.find(([n])=>n===t.name)?.[1]!==t.version)throw Error('实体结构发生变化');
+ if(settings.level_data_version!==hb.readUInt32LE(4))throw new CompatibilityError('WORLD_VERSION','存档世界版本与游戏不一致，需先由游戏正常加载');
+ for(const t of history.types)if(TYPES.has(t.name)&&header.types.find(([n])=>n===t.name)?.[1]!==t.version)throw new CompatibilityError('ENTITY_SCHEMA','实体结构发生变化');
  applyHistory(entities,history,schema);
  const localized=readFileSync(join(game,'data','strings','s-cn.localization'),'utf8');
  const translate=new Map();for(const m of localized.matchAll(/^`([^\r\n]+)\r?\n([^\r\n]+)/gm))translate.set(m[1],m[2]);

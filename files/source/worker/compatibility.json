@@ -1,5 +1,5 @@
 {
-  "modVersion": "0.1.20",
+  "modVersion": "0.1.21-rc1",
   "builds": [
     {
       "id": "26006400",
@@ -15,6 +15,16 @@
       "id": "26466613",
       "exe": "978b302fd0952e4ea8d869553aec875d9c635278a7d0f8cdb752f5a797a370aa",
       "levels": "a736bb1c2b6d44b80fb6de5b30a1f93308ebac0d3ead0e7c022b58a0eee47314"
+    },
+    {
+      "exe": "69ddb71fb6768a097f9bff204201f3a9ce960f1a325f5ed3a5c9160dc64a6ae8",
+      "id": "26825502",
+      "levels": "b78c8cb3796fd0bf370461b267a299dc107d90d407f4fd59c75778d98f778653"
     }
-  ]
+  ],
+  "formats": {
+    "status": 33,
+    "history": 73,
+    "baseEntity": 25
+  }
 }
