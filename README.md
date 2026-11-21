@@ -1,7 +1,7 @@
 <h1 align="center">沉星之序地图</h1>
 <p align="center">读取本地存档，查看未完成的谜题，方便后期查漏补缺。</p>
 <p align="center">
-  <img alt="版本" src="https://img.shields.io/badge/version-0.1.20%20%E6%B5%8B%E8%AF%95%E7%89%88-c5a568">
+  <img alt="版本" src="https://img.shields.io/badge/version-0.1.21--rc1%20%E6%B5%8B%E8%AF%95%E7%89%88-c5a568">
   <img alt="平台" src="https://img.shields.io/badge/platform-Windows%20x64-4476b5">
   <a href="LICENSE"><img alt="代码许可 MIT" src="https://img.shields.io/badge/license%20%28code%29-MIT-739b82"></a>
 </p>
@@ -10,11 +10,11 @@
 
 **默认保留探索迷雾，也可主动开启剧透模式，查看全地图未完成谜题。**
 
-**仓库源码 0.1.21-rc1** 已通过 Steam Build **26825502** 的本地验收，兼容列表另含 **26006400 / 26249670 / 26466613**。当前公开下载的 0.1.20 离线包适用于后三个构建。
+**当前预发布版本为 0.1.21-rc1。** 支持 Steam Build **26006400 / 26249670 / 26466613 / 26825502** 的匹配版本。
 
 ## 下载与安装
 
-**[下载 0.1.20 离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.20/Sinking-Star-Map-0.1.20-Offline.zip)** · [SHA-256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.20/Sinking-Star-Map-0.1.20-SHA256.txt)
+**[下载 0.1.21-rc1 离线安装包](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.21-rc1/Sinking-Star-Map-0.1.21-rc1-Offline.zip)** · [SHA-256 校验文件](https://github.com/catalpa379/sinking-star-map/releases/download/v0.1.21-rc1/Sinking-Star-Map-0.1.21-rc1-SHA256.txt)
 
 安装步骤：
 
@@ -68,7 +68,7 @@
 | 项目 | 当前范围 |
 |---|---|
 | 系统 | Windows x64 |
-| 游戏 | 0.1.20 离线包支持 Steam Build **26006400 / 26249670 / 26466613** 的精确匹配版本 |
+| 游戏 | Steam Build **26006400 / 26249670 / 26466613 / 26825502** 的精确匹配版本 |
 | 建议窗口模式 | 窗口或无边框 |
 
 游戏更新后可能需要重新适配；遇到未知版本时会停止读取或安装。
